@@ -31,7 +31,6 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
-hr.star-light,
 hr.star-primary {
   padding: 0;
   border: none;
@@ -40,7 +39,6 @@ hr.star-primary {
   max-width: 250px;
   margin: 25px auto 30px;
 }
-hr.star-light:after,
 hr.star-primary:after {
   content: "\f005";
   font-family: FontAwesome;
@@ -49,9 +47,6 @@ hr.star-primary:after {
   top: -0.8em;
   font-size: 2em;
   padding: 0 0.25em;
-}
-hr.star-light {
-  border-color: white;
 }
 hr.star-light:after {
   background-color: #18BC9C;
@@ -69,12 +64,12 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
+  background: #a63251;
   color: white;
 }
 header .container {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 120px;
+  padding-bottom: 10px;
 }
 header img {
   display: block;
@@ -84,8 +79,8 @@ header .intro-text .name {
   display: block;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 2em;
+  font-weight: 500;
+  font-size: 2.2em;
 }
 header .intro-text .skills {
   font-size: 1.25em;
@@ -93,18 +88,15 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 200px;
-    padding-bottom: 100px;
-  }
-  header .intro-text .name {
-    font-size: 4.75em;
+    padding-top: 150px;
+    padding-bottom: 1px;
   }
   header .intro-text .skills {
     font-size: 1.75em;
   }
 }
 .navbar-custom {
-  background: #2C3E50;
+  background: #FFFFFF;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -114,22 +106,22 @@ header .intro-text .skills {
   outline: none;
 }
 .navbar-custom .navbar-brand {
-  color: white;
+  color: #323232;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: white;
+  color: #323232;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: #323232;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #18BC9C;
+  color: #a63251;
   outline: none;
 }
 .navbar-custom .navbar-nav li a:focus,
@@ -160,7 +152,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    padding: 25px 0;
+    padding: 5px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -219,16 +211,6 @@ section.success {
 }
 #portfolio .portfolio-item .portfolio-link .caption:hover {
   opacity: 1;
-}
-#portfolio .portfolio-item .portfolio-link .caption .caption-content {
-  position: absolute;
-  width: 100%;
-  height: 20px;
-  font-size: 20px;
-  text-align: center;
-  top: 50%;
-  margin-top: -12px;
-  color: white;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content i {
   margin-top: -12px;
