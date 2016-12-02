@@ -87,8 +87,7 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 150px;
-    padding-bottom: 1px;
+    padding-top: 70px;
   }
   header .intro-text .skills {
     font-size: 1.75em;
@@ -125,29 +124,29 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: white;
+  color: #4d4d4d;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: white;
-  background: #18BC9C;
+  color: #4d4d4d;
+  background: white;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: white;
-  background: #18BC9C;
+  color: #4d4d4d;
+  background: white;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
+  color: #4d4d4d;
   text-transform: none;
   font-size: 10px;
   border-color: white;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #18BC9C;
-  color: white;
-  border-color: #18BC9C;
+  background-color: white;
+  color: #a63251;
+  border-color: #white;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -170,7 +169,7 @@ header .intro-text .skills {
   }
 }
 section {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 section h2 {
   margin: 0;
