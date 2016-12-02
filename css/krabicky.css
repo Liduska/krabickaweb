@@ -16,9 +16,21 @@
 #how-it-works p {
   display: block;
   text-align: center;
+  font-size: 20px;
 }
 
 header .intro-text {
 margin-top: 25px;
 margin-bottom: 25px;
+}
+
+#how-we-do-it {
+  background-color: #A63251;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#how-we-do-it h3 {
+  margin: 2.5rem 0 2.5rem 0;
 }
