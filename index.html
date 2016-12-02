@@ -118,190 +118,228 @@
         <div class="container">
           <div class="row">
               <div class="col-lg-12 text-center">
-                  <h2>Objednat</h2>
+                  <h2>Objednat krabičku</h2>
                   <hr class="star-primary">
               </div>
           </div>
 
-          <h3>Jaky</h3>
+          <h3>Základní info</h3>
+          <div class="row">
+              <div class="col-lg-6">
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label for="krestnijmeno" class="col-sm-3 control-label">Křestní jméno</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="krestnijmeno" placeholder="Pro koho to bude?">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="vek" class="col-sm-3 control-label">Věk</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="vek" placeholder="Věk je jen číslo :)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label for="vztah" class="col-sm-3 control-label">Kdo to je</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="vztah" placeholder="Máma, brácha, partnerka, šéf...">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="udalost" class="col-sm-3 control-label">K jaké příležitosti</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="udalost" placeholder="K narozeninám, výročí, pro radost...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Jdeme do hloubky...</h3>
+            <div class="row">
+              <div class="col-lg-2 col-lg-offset-2">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="kofeinovyzavislak" name="osobnost" /> Kofeinový závislák
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="cajomil" name="osobnost" /> Čajomil
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="vinar" name="osobnost" /> Vinař
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="pivar" name="osobnost" /> Pivař
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="kulinar" name="osobnost" /> Kulinář
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-lg-2">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="ctenar" name="osobnost" /> Čtenář
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="partyboygirl" name="osobnost" /> Párty boy/girl
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="kutil" name="osobnost" /> Kutil
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="sportovec" name="osobnost" /> Sportovec
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="kreativniduse" name="osobnost" /> Kreativní duše
+                    </label>
+                  </div>
+              </div>
+              <div class="col-lg-2">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="milovnikmody" name="osobnost" /> Milovník módy
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="kamossprirodou" name="osobnost" /> Kámoš s přírodou
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="kamossezviraty" name="osobnost" /> Kámoš se zvířaty
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="shopaholic" name="osobnost" /> Shopaholic
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="alternativec" name="osobnost" /> Alternativec
+                    </label>
+                  </div>
+              </div>
+              <div class="col-lg-2">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="cestovatel" name="osobnost" /> Cestovatel
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="hipster" name="osobnost" /> Hipster
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="kreativni" name="osobnost" /> Kreativní
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="romantik" name="osobnost" /> Romantik
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="vintagelover" name="osobnost" /> Vintage lover
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="vzkazpronas">Vzkaz pro nás:</label>
+                  <textarea class="form-control" placeholder="Prozraďte nám podrobnosti! Proč ho/jí máte rádi nebo na jaký společný zážitek nikdy nezapomenete? Můžete přidat nějaký zlozvyk, pikantnost... Cokoliv, co nám Vaše blízké přiblíží."rows="3"></textarea>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="vzkazproprijemce">Vzkaz pro příjemce:</label>
+                  <textarea class="form-control" placeholder="Tady není třeba radit :)"rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+
 
           <div class="row">
-            <div class="col-lg-2 col-lg-offset-2">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="kofeinovyzavislak" name="osobnost" /> Kofeinový závislák
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="cajomil" name="osobnost" /> Čajomil
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="vinar" name="osobnost" /> Vinař
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="pivar" name="osobnost" /> Pivař
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="kulinar" name="osobnost" /> Kulinář
-                </label>
-              </div>
-            </div>
-
-            <div class="col-lg-2">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="ctenar" name="osobnost" /> Čtenář
-                  </label>
+              <div class="col-lg-6">
+                <h3>Fakturační adresa</h3>
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label for="jmenoprijmeni" class="col-sm-3 control-label">Celé jméno</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="jmenoprijmeni">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="faadresa" class="col-sm-3 control-label">Adresa</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="faadresa" placeholder="Ulice, město, PSČ">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="vasemail" class="col-sm-3 control-label">Váš e-mail</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="vasemail">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="telefon" class="col-sm-3 control-label">Váš telefon</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="telefon">
                 </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="partyboygirl" name="osobnost" /> Párty boy/girl
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="kutil" name="osobnost" /> Kutil
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="sportovec" name="osobnost" /> Sportovec
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="kreativniduse" name="osobnost" /> Kreativní duše
-                  </label>
-                </div>
-            </div>
-            <div class="col-lg-2">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="milovnikmody" name="osobnost" /> Milovník módy
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="kamossprirodou" name="osobnost" /> Kámoš s přírodou
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="kamossezviraty" name="osobnost" /> Kámoš se zvířaty
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="shopaholic" name="osobnost" /> Shopaholic
-                  </label>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="alternativec" name="osobnost" /> Alternativec
-                  </label>
-                </div>
-            </div>
-            <div class="col-lg-2">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="cestovatel" name="osobnost" /> Cestovatel
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="hipster" name="osobnost" /> Hipster
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="kreativni" name="osobnost" /> Kreativní
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="romantik" name="osobnost" /> Romantik
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="vintagelover" name="osobnost" /> Vintage lover
-                </label>
               </div>
             </div>
           </div>
 
-          <h3>Nějaké ty základy</h3>
-          <div class="row">
-              <div class="col-lg-3">
-                <div class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
               <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vzkaz...</label>
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vzkaz...</label>
-                  <textarea class="form-control" rows="3"></textarea>
+                <h3>Doručovací adresa</h3>
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label for="jmenoprijmeni" class="col-sm-3 control-label">Celé jméno</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="jmenoprijmeni">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="faadresa" class="col-sm-3 control-label">Fakturační adresa</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="faadresa" placeholder="Ulice, město, PSČ">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="telefon" class="col-sm-3 control-label">Váš telefon</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="telefon">
+                  </div>
                 </div>
               </div>
             </div>
@@ -310,14 +348,14 @@
               <div class="col-lg-6">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="yes" name="keep_private" /> Utajeni
+                    <input type="checkbox" value="yes" name="keep_private" /> Adresa je stejná jako fakturační
                   </label>
                 </div>
               </div>
             </div>
-
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="text-center">
