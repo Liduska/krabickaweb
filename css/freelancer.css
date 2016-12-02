@@ -110,7 +110,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #4d4d4d;
+  color: #A63251;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
@@ -124,16 +124,16 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: #4d4d4d;
+  color: #A63251;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: #4d4d4d;
+  color: #A63251;
   background: white;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: #4d4d4d;
+  color: #A63251;
   background: white;
 }
 .navbar-custom .navbar-toggle {
@@ -146,7 +146,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-toggle:focus {
   background-color: white;
   color: #a63251;
-  border-color: #white;
+  border-color: white;
 }
 @media (min-width: 768px) {
   .navbar-custom {
