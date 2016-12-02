@@ -6,3 +6,19 @@
   display: inline;
   margin-right: 3rem;
 }
+
+#how-it-works img {
+  display: block;
+  width: 15rem;
+  margin: 0 auto 3rem auto;
+}
+
+#how-it-works p {
+  display: block;
+  text-align: center;
+}
+
+header .intro-text {
+margin-top: 25px;
+margin-bottom: 25px;
+}

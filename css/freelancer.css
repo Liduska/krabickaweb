@@ -28,7 +28,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 700;
 }
 hr.star-primary {
@@ -78,7 +78,7 @@ header img {
 header .intro-text .name {
   display: block;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 500;
   font-size: 2.2em;
 }
@@ -98,7 +98,7 @@ header .intro-text .skills {
 .navbar-custom {
   background: #FFFFFF;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 700;
   border: none;
 }
@@ -106,19 +106,19 @@ header .intro-text .skills {
   outline: none;
 }
 .navbar-custom .navbar-brand {
-  color: #323232;
+  color: #4d4d4d;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #323232;
+  color: #4d4d4d;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: #323232;
+  color: #4d4d4d;
 }
 .navbar-custom .navbar-nav li a:hover {
   color: #a63251;
@@ -140,7 +140,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-toggle {
   color: white;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: 10px;
   border-color: white;
 }
