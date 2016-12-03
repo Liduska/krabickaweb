@@ -370,11 +370,11 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #18BC9C;
-  border-color: #18BC9C;
+  background-color: #A63251;
+  border-color: #A63251;
 }
 .btn-success .badge {
-  color: #18BC9C;
+  color: #A63251;
   background-color: white;
 }
 .btn-social {
