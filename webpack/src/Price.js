@@ -107,10 +107,9 @@ export default class App extends React.Component {
           </div>
           &nbsp;
           <div className={valueInputClassNames}>
-            <input type="number" className="form-control" name="content_value" value={this.state.userInput} onChange={this.handleInputChange} />
+            <input type="number" className="form-control" name="hodnota_krabicky" value={this.state.userInput} onChange={this.handleInputChange} />
             &nbsp; Kč
           </div>
-          <input type="hidden" name="price" value={this.state.price} />
         </div>
 
         <div className="row">
@@ -167,6 +166,10 @@ export default class App extends React.Component {
             </dl>
           </div>
         </div>
+        <input type="hidden" name="cena_pred_slevou" value={this.state.price} />
+        <input type="hidden" name="cena_po_sleve" value={this.state.priceAfterDiscount} />
+        <input type="hidden" name="cena_dopravy" value={this.state.deliveryPrice} />
+        <input type="hidden" name="celkova_cena" value={this.state.totalPrice} />
       </div>
     );
   }
