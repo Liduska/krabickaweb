@@ -88,9 +88,14 @@ export default class App extends React.Component {
         <div className="row">
           <div className="col-lg-4">
             <h3>Platba</h3>
-            <div className="checkbox disabled">
+            <div className="checkbox">
               <label>
-                <input type="radio" value="ucet" name="platba" checked disabled /> Předem na bankovní účet
+                <input type="radio" value="ucet" name="platba" checked /> Předem na bankovní účet
+              </label>
+            </div>
+            <div className="checkbox">
+              <label>
+                <input type="radio" value="bitcoin" name="platba" /> Chci platit bitcoinem
               </label>
             </div>
           </div>
