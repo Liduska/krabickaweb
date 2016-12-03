@@ -169,7 +169,7 @@ header .intro-text .skills {
   }
 }
 section {
-  padding: 20px 0;
+  padding: 80px 0;
 }
 section h2 {
   margin: 0;
@@ -303,7 +303,7 @@ footer .footer-below {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-  color: #18BC9C;
+  color: #A63251;
   background: white;
   border: solid 2px white;
 }
