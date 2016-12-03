@@ -118,7 +118,7 @@ export default class App extends React.Component {
             <h3>Platba</h3>
             <div className="checkbox">
               <label>
-                <input type="radio" value="ucet" name="platba" checked /> Předem na bankovní účet
+                <input type="radio" value="ucet" name="platba" defaultChecked /> Předem na bankovní účet
               </label>
             </div>
             <div className="checkbox">
