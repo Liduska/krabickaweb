@@ -11,10 +11,10 @@ export default class App extends React.Component {
 
     this.state = {
       userInput: 500,
-      value: 500,
-      deliveryPrice: 0
+      value: 500
     };
     this.state.price = this.calculatePrice(this.state.value)
+    this.validate()
   }
 
   calculatePrice(value) {
@@ -27,7 +27,7 @@ export default class App extends React.Component {
 
     this.setState({
       totalPrice: price + deliveryPrice
-    })
+    }, this.validate)
   }
 
   handleValueChange = (component, value) => {
@@ -35,8 +35,7 @@ export default class App extends React.Component {
       value: value,
       userInput: value,
       price: Math.round(this.calculatePrice(value))
-    });
-    this.calculateTotalPrice()
+    }, this.calculateTotalPrice);
   }
 
   handleInputChange = (event) => {
@@ -48,19 +47,22 @@ export default class App extends React.Component {
     this.setState({
       value: value,
       price: Math.round(this.calculatePrice(value))
-    });
-    this.calculateTotalPrice()
+    }, this.calculateTotalPrice);
   }
 
   handleDeliveryChange = (price) => {
     this.setState({
       deliveryPrice: price
-    });
-    this.calculateTotalPrice()
+    }, this.calculateTotalPrice);
+  }
+
+  validate = () => {
+    const submitButton = $('button[type=submit]')
+    submitButton.prop('disabled', !this.state.totalPrice)
   }
 
   render() {
-    const { userInput, value, price } = this.state
+    const { userInput, value, price, deliveryPrice, totalPrice } = this.state
     const valueInputClassNames = classNames('form-group', { 'has-error':  userInput !== value })
     return (
       <div>
@@ -116,9 +118,9 @@ export default class App extends React.Component {
               <dt>Cena krabičky</dt>
               <dd>{this.state.price} Kč</dd>
               <dt>Cena dopravy</dt>
-              <dd>{this.state.deliveryPrice} Kč</dd>
+              <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Ještě nevíme'}</dd>
               <dt className="total-price"><strong>Celková cena</strong></dt>
-              <dd className="total-price">{this.state.totalPrice} Kč</dd>
+              <dd className="total-price">{totalPrice ? `${totalPrice} Kč` : 'Ještě nevíme'}</dd>
             </dl>
           </div>
         </div>
