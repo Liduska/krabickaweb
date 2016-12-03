@@ -69,6 +69,10 @@ img.product {
   margin: 1rem 0;
 }
 
+dl {
+  margin-top: 2rem;
+}
+
 dt {
   font-weight: normal;
 }
