@@ -8,6 +8,7 @@ mkdir out;
  cp ../CNAME ./CNAME
  cp ../index.html ./index.html
  cp -r ../build ./build
+ cp -r ../js ./js
  cp -r ../img ./img
  cp -r ../css ./css
  git add .
