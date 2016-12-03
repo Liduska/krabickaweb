@@ -7,6 +7,7 @@ mkdir out;
  git config user.email "travis@krabickanamiru.cz"
  cp ../CNAME ./CNAME
  cp ../index.html ./index.html
+ cp ../jupi.html ./jupi.html
  cp -r ../build ./build
  cp -r ../js ./js
  cp -r ../img ./img
