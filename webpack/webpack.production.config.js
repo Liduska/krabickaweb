@@ -18,9 +18,9 @@ var loaders = [
 ];
 
 module.exports = {
-  entry: path.resolve('src', 'main.js'),
+  entry: path.resolve('webpack', 'src', 'main.js'),
   output: {
-    path: path.resolve('build'),
+    path: path.resolve('../build'),
     filename: '[name].js',
     publicPath: '/'
   },

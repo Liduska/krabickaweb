@@ -19,11 +19,11 @@ var loaders = [
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: path.resolve('src', 'main.js'),
+  entry: path.resolve('webpack', 'src', 'main.js'),
   output: {
     path: path.resolve('build'),
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: '/build/'
   },
   module: {
     loaders: loaders
