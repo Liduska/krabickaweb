@@ -106,7 +106,7 @@ export default class App extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="posta" name="doprava" onChange={() => this.handleDeliveryChange(99)} /> Českou poštou <strong>99 Kč</strong>
+                <input type="radio" value="posta" name="doprava" onChange={() => this.handleDeliveryChange(99)} /> Přepravní službou Geis <strong>99 Kč</strong>
               </label>
             </div>
           </div>

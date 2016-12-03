@@ -90,7 +90,7 @@
         </div>
         <div class="col-sm-4">
           <img src="img/doprava.svg" alt="">
-          <p>Jakmile bude krabička připravena, pošlu Vám ji dopravní službou nebo si ji sami vyzvednete.</p>
+          <p>Jakmile bude krabička připravena, pošlu Vám ji přepravní službou nebo si ji sami vyzvednete.</p>
         </div>
       </div>
     </div>
@@ -125,7 +125,7 @@
 
       <form action="https://formspree.io/ahoj@krabickanamiru.cz" method="POST">
 
-        <h3>Základní info</h3>
+        <h3>Základní info:</h3>
         <div class="row">
           <div class="col-lg-6">
             <div class="form-horizontal">
@@ -162,7 +162,7 @@
           </div>
         </div>
 
-        <h3>Jdeme do hloubky...</h3>
+        <h3>Jdeme do hloubky:</h3>
         <div class="row">
           <div class="col-lg-2 col-lg-offset-2">
             <div class="checkbox">
@@ -278,13 +278,13 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="vzkazpronas">Vzkaz pro nás:</label>
+              <h3>Vzkaz pro nás:</h3>
               <textarea class="form-control" id="vzkazpronas" name="vzkazpronas" placeholder="Prozraďte mi podrobnosti! Proč ho/jí máte rádi nebo na jaký společný zážitek nikdy nezapomenete? Můžete přidat nějaký zlozvyk, pikantnost... Cokoliv, co mi Vaše blízké přiblíží." rows="3"></textarea>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="form-group">
-              <label for="vzkazproprijemce">Vzkaz pro příjemce:</label>
+              <h3>Vzkaz pro příjemce:</h3>
               <textarea class="form-control" id="vzkazproprijemce" name="vzkazproprijemce" placeholder="Tady není třeba radit :)" rows="3"></textarea>
             </div>
           </div>
@@ -309,15 +309,20 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="vasemail" class="col-sm-3 control-label">Váš e-mail</label>
-                <div class="col-sm-9">
-                  <input type="email" class="form-control" id="vasemail" name="vasemail">
-                </div>
-              </div>
-              <div class="form-group">
                 <label for="telefon" class="col-sm-3 control-label">Váš telefon</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" id="telefon" name="telefon">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="vasemail" class="col-sm-3 control-label">Váš e-mail</label>
+                <div class="col-sm-9">
+                  <input type="email" class="form-control" id="vasemail" name="vasemail">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="yes" name="odbernl" /> Chci dostávat max. 1x měsíčně Krabičkový newsletter.
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -342,20 +347,16 @@
                 <label for="telefon" class="col-sm-3 control-label">Váš telefon</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" id="telefon" name="telefon">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="yes" name="stejnaadresa" /> Adresa je stejná jako fakturační
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="yes" name="stejnaadresa" /> Adresa je stejná jako fakturační
-                </label>
-              </div>
-            </div>
-          </div>
           <div class="row">
               <div class="form-group col-xs-12">
                   <button type="submit" class="btn btn-success btn-lg">Odeslat objednávku</button>
