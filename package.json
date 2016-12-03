@@ -1,7 +1,7 @@
 {
-  "name": "webpackbin-project",
+  "name": "krabicka-na-miru",
   "version": "1.0.0",
-  "description": "Project boilerplate",
+  "description": "Krabicka na miru microsite",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack.production.config.js",
@@ -27,6 +27,6 @@
     "webpack": "1.12.13",
     "webpack-dev-server": "1.14.1"
   },
-  "author": "WebpackBin",
+  "author": "Josef Rousek",
   "license": "ISC"
 }

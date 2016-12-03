@@ -1,12 +1,4 @@
 
-dt {
-  font-weight: normal;
-}
-
-.total-price {
-  font-size: 2rem;
-}
-
 #how-it-works img {
   display: block;
   width: 15rem;
@@ -39,17 +31,48 @@ margin-top: 25px;
 margin-bottom: 25px;
 }
 
-#how-we-do-it {
-  background-color: #A63251;
-  color: white;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.how-we-do-it {
+  padding: 5rem 0;
 }
 
-#how-we-do-it h3 {
+.how-we-do-it__bg {
+  background-color: #A63251;
+  color: white;
+}
+
+.how-we-do-it h3 {
   margin: 2.5rem 0 2.5rem 0;
+}
+
+img.product {
+  width: 100%;
+}
+
+.half {
+  margin: 0.5rem;
+}
+
+@media (min-width: 768px) {
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .half {
+    margin: 0 2rem;
+  }
 }
 
 .price {
   margin: 1rem 0;
+}
+
+dt {
+  font-weight: normal;
+}
+
+.total-price {
+  font-size: 2rem;
 }
