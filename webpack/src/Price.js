@@ -3,15 +3,15 @@ import InputRange from 'react-input-range'
 import classNames from 'classnames'
 
 const MAX_VALUE = 2000
-const MIN_VALUE = 500
+const MIN_VALUE = 650
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      userInput: 500,
-      value: 500,
+      userInput: 650,
+      value: 650,
       voucher: ''
     };
     this.state.price = this.calculatePrice(this.state.value)
