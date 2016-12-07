@@ -2,7 +2,7 @@ import React from 'react'
 import InputRange from 'react-input-range'
 import classNames from 'classnames'
 
-const MAX_VALUE = 2000
+const MAX_VALUE = 3000
 const MIN_VALUE = 650
 
 export default class App extends React.Component {
