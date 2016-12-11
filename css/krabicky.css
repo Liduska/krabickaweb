@@ -34,11 +34,19 @@ margin-bottom: 25px;
   margin: 0.5rem;
 }
 
+#photos {
+  padding: 0;
+}
+
 #photos img {
   width: 18rem;
   margin: 0.5rem;
   object-fit: cover;
   height: 120px;
+}
+
+#order {
+  padding-top: 0;
 }
 
 @media (min-width: 768px) {
