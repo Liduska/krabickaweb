@@ -1,34 +1,20 @@
-
-#how-it-works img {
-  display: block;
-  width: 15rem;
-  margin: 0 auto 3rem auto;
-}
-
-#how-it-works p {
-  display: block;
-  text-align: center;
-  font-size: 20px;
-}
-
-.logo-circle {
-  margin: 0 auto;
-  background: white;
-  border-radius: 200px;
-  width: 150px;
-  height: 150px;
-  display: table;
-  text-align: center;
-}
-
-.logo-circle-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+img {
+  width: 80%;
 }
 
 header .intro-text {
 margin-top: 25px;
 margin-bottom: 25px;
+}
+
+.intro-text img {
+  width: 70px;
+  position: relative;
+  top: -22px;
+}
+
+.how-it-works {
+  text-align: center;
 }
 
 .how-we-do-it {
@@ -42,10 +28,6 @@ margin-bottom: 25px;
 
 .how-we-do-it h3 {
   margin: 2.5rem 0 2.5rem 0;
-}
-
-img.product {
-  width: 100%;
 }
 
 .half {
