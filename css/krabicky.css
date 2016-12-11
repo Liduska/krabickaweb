@@ -2,6 +2,10 @@ img {
   width: 80%;
 }
 
+header {
+margin-top: 3rem;
+}
+
 header .intro-text {
 margin-top: 25px;
 margin-bottom: 25px;
