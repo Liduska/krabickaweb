@@ -86,7 +86,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-brand {
   color: #4d4d4d;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Amatic SC', cursive;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -138,16 +138,18 @@ header .intro-text .skills {
     transition: padding 0.3s;
   }
   .navbar-custom .navbar-brand {
-    font-size: 2em;
+    font-size: 3em;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+    letter-spacing: 2px;
+    font-weight: normal;
   }
   .navbar-custom.affix {
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 section {
