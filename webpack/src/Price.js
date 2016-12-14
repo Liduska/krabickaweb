@@ -15,7 +15,6 @@ export default class App extends React.Component {
       voucher: ''
     };
     this.state.price = this.calculatePrice(this.state.value)
-    this.state.priceAfterDiscount = this.state.price
     this.validate()
   }
 
@@ -24,32 +23,19 @@ export default class App extends React.Component {
     return value * ratio
   }
 
-  calculateDiscount = () => {
-    switch (this.state.voucher) {
-      case 'prvnikrabicka':
-        return 1 - 0.15
-        break
-      default:
-        return 1
-    }
-  }
-
   calculateTotalPrice() {
-    const { priceAfterDiscount, deliveryPrice } = this.state
+    const { price, deliveryPrice } = this.state
 
     this.setState({
-      totalPrice: priceAfterDiscount + deliveryPrice
+      totalPrice: price + deliveryPrice
     }, this.validate)
   }
 
   updateValueAndPrice(value) {
     const price = Math.round(this.calculatePrice(value))
-    const discount = this.calculateDiscount()
     this.setState({
       value: value,
-      price: price,
-      priceAfterDiscount: Math.round(price * discount),
-      hasDiscount: discount !== 1
+      price: price
     }, this.calculateTotalPrice);
   }
 
@@ -75,22 +61,14 @@ export default class App extends React.Component {
     }, this.calculateTotalPrice);
   }
 
-  handleVoucherChange = (event) => {
-    const value = event.target.value
-    this.setState({
-      voucher: value
-    }, () => this.updateValueAndPrice(this.state.value));
-  }
-
   validate = () => {
     const submitButton = $('button[type=submit]')
     submitButton.prop('disabled', !this.state.totalPrice)
   }
 
   render() {
-    const { userInput, value, price, priceAfterDiscount, hasDiscount, deliveryPrice, totalPrice } = this.state
+    const { userInput, value, price, deliveryPrice, totalPrice } = this.state
     const valueInputClassNames = classNames('form-group', { 'has-error':  userInput !== value })
-    const voucherInputClassNames = classNames('form-group', { 'has-success has-feedback':  hasDiscount })
 
     return (
       <div>
@@ -127,7 +105,7 @@ export default class App extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="paypal" name="platba" defaultChecked /> PayPal <strong>ihned</strong>
+                <input type="radio" value="paypal" name="platba" /> PayPal <strong>ihned</strong>
               </label>
             </div>
           </div>
@@ -146,14 +124,6 @@ export default class App extends React.Component {
           </div>
           <div className="col-lg-4">
             <h3>Cena</h3>
-            <div className="form-inline">
-              <div className={voucherInputClassNames}>
-                <label htmlFor="voucher">Slevový kód</label>
-                &nbsp;
-                <input id="voucher" type="text" className="form-control" name="voucher_code" value={this.state.voucher} onChange={this.handleVoucherChange} />
-                {hasDiscount ? <span className="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span> : ''}
-              </div>
-            </div>
             <dl className="dl-horizontal">
               <dt>Za dárky</dt>
               <dd>{this.state.price} Kč</dd>
@@ -165,7 +135,6 @@ export default class App extends React.Component {
           </div>
         </div>
         <input type="hidden" name="cena_pred_slevou" value={this.state.price} />
-        <input type="hidden" name="cena_po_sleve" value={this.state.priceAfterDiscount} />
         <input type="hidden" name="cena_dopravy" value={this.state.deliveryPrice} />
         <input type="hidden" name="celkova_cena" value={this.state.totalPrice} />
       </div>
