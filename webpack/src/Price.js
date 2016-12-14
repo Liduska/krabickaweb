@@ -114,15 +114,20 @@ export default class App extends React.Component {
 
         <div className="row">
           <div className="col-lg-4">
-            <h3>Platba</h3>
+            <h3>Způsob platby</h3>
             <div className="checkbox">
               <label>
-                <input type="radio" value="ucet" name="platba" defaultChecked /> Předem na bankovní účet
+                <input type="radio" value="ucet" name="platba" defaultChecked /> Předem na bankovní účet <strong>1-2 dny</strong>
               </label>
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="bitcoin" name="platba" /> Chci platit bitcoinem
+                <input type="radio" value="bitcoin" name="platba" /> Chci platit bitcoinem <strong>ihned</strong>
+              </label>
+            </div>
+            <div className="checkbox">
+              <label>
+                <input type="radio" value="paypal" name="platba" defaultChecked /> PayPal <strong>ihned</strong>
               </label>
             </div>
           </div>
@@ -130,12 +135,7 @@ export default class App extends React.Component {
             <h3>Doručení</h3>
             <div className="checkbox">
               <label>
-                <input type="radio" value="osobne" name="doprava" onChange={() => this.handleDeliveryChange(0)} /> Osobní převzetí, Praha 9 - Prosek <strong>zdarma</strong>
-              </label>
-            </div>
-            <div className="checkbox">
-              <label>
-                <input type="radio" value="kuryr" name="doprava" onChange={() => this.handleDeliveryChange(39)} /> Doručení po Praze <strong>39 Kč</strong>
+                <input type="radio" value="osobne" name="doprava" onChange={() => this.handleDeliveryChange(0)} /> Osobní převzetí v Praze <strong>zdarma</strong>
               </label>
             </div>
             <div className="checkbox">
@@ -155,14 +155,12 @@ export default class App extends React.Component {
               </div>
             </div>
             <dl className="dl-horizontal">
-              <dt>Cena krabičky</dt>
+              <dt>Za dárky</dt>
               <dd>{this.state.price} Kč</dd>
-              <dt>Cena po slevě</dt>
-              <dd>{!isNaN(priceAfterDiscount) ? `${priceAfterDiscount} Kč` : 'Ještě nevíme'}</dd>
-              <dt>Cena dopravy</dt>
-              <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Ještě nevíme'}</dd>
+              <dt>Za dopravu</dt>
+              <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'}</dd>
               <dt className="total-price"><strong>Celková cena</strong></dt>
-              <dd className="total-price">{totalPrice ? `${totalPrice} Kč` : 'Ještě nevíme'}</dd>
+              <dd className="total-price">{totalPrice ? `${totalPrice} Kč` : '?'}</dd>
             </dl>
           </div>
         </div>
