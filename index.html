@@ -380,6 +380,17 @@
           </div>
         </div>
       </form>
+
+      <div id="fb-message">
+        <p>Nikdo není dokonalý. Ani náš objednávkový formulář, který na mobilech a tabletech trochu zlobí. Ale to nám nebrání vyřídit Vaši objednávku přes Messenger. Reagujeme do hodiny. Tak hurá na to!</p>
+        <div class="fb-messengermessageus"
+             messenger_app_id="95100348886"
+             page_id="457872047732411"
+             color="blue"
+             size="large">
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -479,6 +490,26 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
 });
+</script>
+
+<script>
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '95100348886',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/cs_CZ/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
 </script>
 
 </body>

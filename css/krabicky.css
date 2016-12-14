@@ -84,3 +84,17 @@ dt {
 .total-price {
   font-size: 2rem;
 }
+
+#fb-message {
+  text-align: center;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #fb-message {
+    display: block;
+  }
+  form {
+    display: none;
+  }
+}
