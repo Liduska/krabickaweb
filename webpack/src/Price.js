@@ -114,7 +114,7 @@ export default class App extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="paypal" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'paypal'} /> Online kartou/PayPal <strong>ihned</strong>
+                <input type="radio" value="paypal" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'paypal'} /> PayPal <strong>ihned</strong>
               </label>
             </div>
           </div>
