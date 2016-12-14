@@ -12,7 +12,8 @@ export default class App extends React.Component {
     this.state = {
       userInput: 650,
       value: 650,
-      voucher: ''
+      voucher: '',
+      paymentType: 'ucet'
     };
     this.state.price = this.calculatePrice(this.state.value)
     this.validate()
@@ -58,7 +59,15 @@ export default class App extends React.Component {
   handleDeliveryChange = (price) => {
     this.setState({
       deliveryPrice: price
-    }, this.calculateTotalPrice);
+    }, this.calculateTotalPrice)
+  }
+
+  handlePaymentTypeChange = (event) => {
+    const value = event.target.value
+    console.log(value);
+    this.setState({
+      paymentType: value
+    })
   }
 
   validate = () => {
@@ -67,7 +76,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { userInput, value, price, deliveryPrice, totalPrice } = this.state
+    const { userInput, value, price, deliveryPrice, totalPrice, paymentType, name } = this.state
     const valueInputClassNames = classNames('form-group', { 'has-error':  userInput !== value })
 
     return (
@@ -95,17 +104,17 @@ export default class App extends React.Component {
             <h3>Způsob platby</h3>
             <div className="checkbox">
               <label>
-                <input type="radio" value="ucet" name="platba" defaultChecked /> Předem na bankovní účet <strong>1-2 dny</strong>
+                <input type="radio" value="ucet" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'ucet'} /> Předem na bankovní účet <strong>1-2 dny</strong>
               </label>
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="bitcoin" name="platba" /> Chci platit bitcoinem <strong>ihned</strong>
+                <input type="radio" value="bitcoin" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'bitcoin'} /> Chci platit bitcoinem <strong>ihned</strong>
               </label>
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="paypal" name="platba" /> PayPal <strong>ihned</strong>
+                <input type="radio" value="paypal" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'paypal'} /> Online kartou/PayPal <strong>ihned</strong>
               </label>
             </div>
           </div>
@@ -137,6 +146,7 @@ export default class App extends React.Component {
         <input type="hidden" name="cena_pred_slevou" value={this.state.price} />
         <input type="hidden" name="cena_dopravy" value={this.state.deliveryPrice} />
         <input type="hidden" name="celkova_cena" value={this.state.totalPrice} />
+        <input type="hidden" name="_next" value={`http://krabickanamiru.cz/jupi.html?paymentType=${paymentType}&amount=${totalPrice}`} />
       </div>
     );
   }

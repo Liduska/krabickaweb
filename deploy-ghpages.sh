@@ -8,6 +8,8 @@ mkdir out;
  cp ../CNAME ./CNAME
  cp ../index.html ./index.html
  cp ../jupi.html ./jupi.html
+ cp ../zaplaceno.html ./zaplaceno.html
+ cp ../neuspesna-platba.html ./neuspesna-platba.html
  cp -r ../build ./build
  cp -r ../js ./js
  cp -r ../img ./img
