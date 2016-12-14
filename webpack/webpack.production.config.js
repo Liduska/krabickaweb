@@ -33,6 +33,7 @@ module.exports = {
     }),
     // Try to dedupe duplicated modules, if any:
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {

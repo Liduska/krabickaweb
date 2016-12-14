@@ -15,7 +15,7 @@ function getQueryVariable(variable) {
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    console.log('xxx');
+
     this.state = {
       amount: getQueryVariable('amount'),
       paymentType: getQueryVariable('paymentType')
