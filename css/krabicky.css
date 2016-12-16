@@ -74,6 +74,15 @@ dt {
   font-weight: normal;
 }
 
+.radio-inline label {
+  font-weight: normal;
+}
+
+.price-selector {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 @media (min-width: 768px) {
   .dl-horizontal dt {
     text-align: left;

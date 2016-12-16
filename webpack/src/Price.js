@@ -1,27 +1,24 @@
 import React from 'react'
-import InputRange from 'react-input-range'
 import classNames from 'classnames'
 
-const MAX_VALUE = 3000
-const MIN_VALUE = 650
+const PRICES = [
+  { name: 'Radostná', price: 700 },
+  { name: 'Sváteční', price: 1000 },
+  { name: 'Důležitá', price: 1500 },
+  { name: 'Výjimečná', price: 2000 },
+  { name: 'VIP', price: 2500 },
+  { name: 'Královská', price: 3000 },
+]
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      userInput: 650,
-      value: 650,
-      voucher: '',
+      price: 700,
       paymentType: 'ucet'
     };
-    this.state.price = this.calculatePrice(this.state.value)
     this.validate()
-  }
-
-  calculatePrice(value) {
-    const ratio = value < 1000 ? 1.30 : 1.25
-    return value * ratio
   }
 
   calculateTotalPrice() {
@@ -32,28 +29,11 @@ export default class App extends React.Component {
     }, this.validate)
   }
 
-  updateValueAndPrice(value) {
-    const price = Math.round(this.calculatePrice(value))
+  handlePriceChange = (event) => {
+    const price = Number(event.target.value)
     this.setState({
-      value: value,
       price: price
     }, this.calculateTotalPrice);
-  }
-
-  handleValueChange = (component, value) => {
-    this.setState({
-      userInput: value
-    });
-    this.updateValueAndPrice(value)
-  }
-
-  handleInputChange = (event) => {
-    const value = event.target.value
-    this.setState({
-      userInput: value
-    })
-    if (value > MAX_VALUE || value < MIN_VALUE) return
-    this.updateValueAndPrice(value)
   }
 
   handleDeliveryChange = (price) => {
@@ -64,7 +44,6 @@ export default class App extends React.Component {
 
   handlePaymentTypeChange = (event) => {
     const value = event.target.value
-    console.log(value);
     this.setState({
       paymentType: value
     })
@@ -76,26 +55,18 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { userInput, value, price, deliveryPrice, totalPrice, paymentType, name } = this.state
-    const valueInputClassNames = classNames('form-group', { 'has-error':  userInput !== value })
+    const { price, deliveryPrice, totalPrice, paymentType, name } = this.state
 
     return (
       <div>
-        <h3>Dárky v hodnotě</h3>
+        <h3>Mám zájem o krabičku</h3>
         <div className="form-inline">
-          <div className="form-group col-lg-4 col-lg-offset-3">
-            <InputRange
-              maxValue={MAX_VALUE}
-              minValue={MIN_VALUE}
-              step={50}
-              value={this.state.value}
-              onChange={this.handleValueChange}
-            />
-          </div>
-          &nbsp;
-          <div className={valueInputClassNames}>
-            <input type="number" className="form-control" name="hodnota_krabicky" value={this.state.userInput} onChange={this.handleInputChange} />
-            &nbsp; Kč
+          <div className="form-group col-lg-12 price-selector">
+            {PRICES.map((p) => <div key={p.price} className="radio-inline">
+              <label>
+                <input type="radio" value={p.price} name="price" onChange={this.handlePriceChange} checked={price === p.price} /> {p.name} <strong>{p.price} Kč</strong>
+              </label>
+            </div>)}
           </div>
         </div>
 
@@ -134,7 +105,7 @@ export default class App extends React.Component {
           <div className="col-lg-4">
             <h3>Cena</h3>
             <dl className="dl-horizontal">
-              <dt>Za dárky</dt>
+              <dt>Za krabičku</dt>
               <dd>{this.state.price} Kč</dd>
               <dt>Za dopravu</dt>
               <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'}</dd>
@@ -143,7 +114,7 @@ export default class App extends React.Component {
             </dl>
           </div>
         </div>
-        <input type="hidden" name="cena_pred_slevou" value={this.state.price} />
+        <input type="hidden" name="cena_krabicky" value={this.state.price} />
         <input type="hidden" name="cena_dopravy" value={this.state.deliveryPrice} />
         <input type="hidden" name="celkova_cena" value={this.state.totalPrice} />
         <input type="hidden" name="_next" value={`http://krabickanamiru.cz/jupi.html?paymentType=${paymentType}&amount=${totalPrice}`} />
