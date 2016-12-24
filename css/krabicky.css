@@ -107,3 +107,8 @@ dt {
     display: none;
   }
 }
+
+.link-list {
+  font-size: 16px;
+  text-align: left;
+}
