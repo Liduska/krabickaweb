@@ -112,3 +112,22 @@ dt {
   font-size: 16px;
   text-align: left;
 }
+
+.q-and-a {
+padding-top: 120px;
+padding-bottom: 120px;
+max-width: 960px;
+margin: 0 auto;
+}
+.q-and-a h1, .q-and-a h3, .q-and-a h4 {
+  margin-top: 3rem;
+}
+
+.q-and-a h1 {
+  font-size: 24px;
+}
+
+.q-and-a h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
