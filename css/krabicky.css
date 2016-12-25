@@ -132,6 +132,14 @@ margin: 0 auto;
   font-weight: bold;
 }
 
+.hotove-krabicky .col-md-12 {
+  margin-bottom: 5rem;
+}
+
+.product {
+  margin-bottom: 5rem;
+}
+
 .product i {
   text-align: center;
   display: block;
