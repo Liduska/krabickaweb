@@ -113,7 +113,7 @@ dt {
   text-align: left;
 }
 
-.q-and-a {
+.q-and-a, .hotove-krabicky {
 padding-top: 120px;
 padding-bottom: 120px;
 max-width: 960px;
@@ -130,4 +130,15 @@ margin: 0 auto;
 .q-and-a h5 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+}
+
+.product i {
+  text-align: center;
+  display: block;
+  font-size: 46px;
+  margin-bottom: 3rem;
+}
+
+.product p {
+  text-align: center;
 }
