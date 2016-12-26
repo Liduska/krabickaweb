@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from './Price.js';
+import Order from './Order.js';
+import orderStore from './OrderStore'
 
-render(<App/>, document.querySelector('#app'));
+render(<Order store={orderStore} />, document.querySelector('#app'));
