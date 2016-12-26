@@ -1,3 +1,5 @@
+import { computed, intercept, observe, observable, extendObservable } from 'mobx'
+import { observer } from 'mobx-react'
 import React from 'react'
 import classNames from 'classnames'
 
@@ -10,52 +12,45 @@ const PRICES = [
   { name: 'Královská', price: 3000 },
 ]
 
-export default class App extends React.Component {
+export default observer(class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = {
+    extendObservable(this, {
+      paymentType: 'ucet',
       price: 700,
-      paymentType: 'ucet'
-    };
-    this.validate()
-  }
+      deliveryPrice: undefined,
+      get totalPrice() {
+        const { price, deliveryPrice } = this
 
-  calculateTotalPrice() {
-    const { price, deliveryPrice } = this.state
+        return price + deliveryPrice
+      }
+    })
 
-    this.setState({
-      totalPrice: price + deliveryPrice
-    }, this.validate)
+    observe(this, 'totalPrice', (value) => this.validate(value))
   }
 
   handlePriceChange = (event) => {
     const price = Number(event.target.value)
-    this.setState({
-      price: price
-    }, this.calculateTotalPrice);
+    this.price = price
   }
 
   handleDeliveryChange = (price) => {
-    this.setState({
-      deliveryPrice: price
-    }, this.calculateTotalPrice)
+    this.deliveryPrice = price
   }
 
   handlePaymentTypeChange = (event) => {
     const value = event.target.value
-    this.setState({
-      paymentType: value
-    })
+    this.paymentType = paymentType
   }
 
-  validate = () => {
+  validate = (totalPrice) => {
     const submitButton = $('button[type=submit]')
-    submitButton.prop('disabled', !this.state.totalPrice)
+    submitButton.prop('disabled', !totalPrice)
   }
 
   render() {
-    const { price, deliveryPrice, totalPrice, paymentType, name } = this.state
+    const { totalPrice, price, deliveryPrice, paymentType } = this
 
     return (
       <div>
@@ -106,7 +101,7 @@ export default class App extends React.Component {
             <h3>Cena</h3>
             <dl className="dl-horizontal">
               <dt>Za krabičku</dt>
-              <dd>{this.state.price} Kč</dd>
+              <dd>{price} Kč</dd>
               <dt>Za dopravu</dt>
               <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'}</dd>
               <dt className="total-price"><strong>Celková cena</strong></dt>
@@ -114,11 +109,11 @@ export default class App extends React.Component {
             </dl>
           </div>
         </div>
-        <input type="hidden" name="cena_krabicky" value={this.state.price} />
-        <input type="hidden" name="cena_dopravy" value={this.state.deliveryPrice} />
-        <input type="hidden" name="celkova_cena" value={this.state.totalPrice} />
+        <input type="hidden" name="cena_krabicky" value={price} />
+        <input type="hidden" name="cena_dopravy" value={deliveryPrice} />
+        <input type="hidden" name="celkova_cena" value={totalPrice} />
         <input type="hidden" name="_next" value={`http://krabickanamiru.cz/jupi.html?paymentType=${paymentType}&amount=${totalPrice}`} />
       </div>
     );
   }
-}
+})
