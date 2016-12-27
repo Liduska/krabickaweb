@@ -1,10 +1,8 @@
-import { autorun, extendObservable, action } from 'mobx'
+import { autorun, extendObservable, action, toJS } from 'mobx'
 
 class OrderStore {
 
   constructor() {
-    autorun(() => console.log(this));
-
     extendObservable(this, {
       paymentType: 'ucet',
       price: 700,

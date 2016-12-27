@@ -1,4 +1,7 @@
-
+.progtrckr-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 ol.progtrckr {
   list-style-type: none;
