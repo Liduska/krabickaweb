@@ -69,6 +69,18 @@ margin-bottom: 25px;
   .half {
     margin: 0 2rem;
   }
+
+  .box-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 5px;
+  }
 }
 
 .price {
@@ -81,11 +93,6 @@ dt {
 
 .radio-inline label {
   font-weight: normal;
-}
-
-.price-selector {
-  text-align: center;
-  margin: 2rem 0;
 }
 
 @media (min-width: 768px) {
