@@ -161,9 +161,11 @@ export default class StepZilla extends Component {
 
         {
           this.props.showSteps
-          ? <ol className="progtrckr">
-              {this._renderSteps()}
-            </ol>
+          ? <div className="progtrckr-wrapper">
+              <ol className="progtrckr">
+                {this._renderSteps()}
+              </ol>
+            </div>
           : <span></span>
         }
 
