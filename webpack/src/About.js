@@ -29,8 +29,10 @@ export default class About extends React.Component {
         <div className="row">
          <div className="col-lg-6">
            <div className="form-horizontal">
-             <BoundInput type="text" id="krestnijmeno" label="Křestní jméno" placeholder="Pro koho to bude?" required />
-             <BoundInput type="text" id="veb" label="Věk" placeholder="Věk je jen číslo :)" />
+           <BoundInput type="text" id="zajmy" label="Volný čas" placeholder="vaření, fotbal, cestování..." />
+           <BoundInput type="text" id="povaha" label="Povaha" placeholder="romantik, extrovert, bavič... " />
+           <BoundInput type="text" id="zivotnistyl" label="Životní styl" placeholder="ekolog, pankáč, hipster..." />
+           <BoundInput type="text" id="chute" label="Chutě" placeholder="vinař, pivař, vegetarián..." />
            </div>
          </div>
        </div>

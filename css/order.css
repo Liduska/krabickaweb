@@ -1,3 +1,7 @@
+#order p {
+  font-size: 0.98em;
+}
+
 .progtrckr-wrapper {
   display: flex;
   justify-content: center;
@@ -13,8 +17,6 @@ ol.progtrckr li {
   display: inline-block;
   text-align: center;
   line-height: 4.5rem;
-  // padding: 0 0.7rem;
-  cursor: pointer;
 }
 
 ol.progtrckr li span {
