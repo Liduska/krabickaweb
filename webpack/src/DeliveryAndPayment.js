@@ -49,15 +49,9 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
           </div>
           <div className="col-lg-4">
-            <h3>Cena</h3>
-            <dl className="dl-horizontal">
-              <dt>Za krabičku</dt>
-              <dd>{price} Kč</dd>
-              <dt>Za dopravu</dt>
-              <dd>{!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'}</dd>
-              <dt className="total-price"><strong>Celková cena</strong></dt>
-              <dd className="total-price">{totalPrice ? `${totalPrice} Kč` : '?'}</dd>
-            </dl>
+            <h3>Další možnosti</h3>
+            <BoundInput type="checkbox" id="inkognito" checkboxValue="yes" label="Chci zůstat inkognito" indentLeft={false} />
+            <BoundInput type="checkbox" id="schvalit_obsah" checkboxValue="yes" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
           </div>
         </div>
         <div className="row">
@@ -65,68 +59,20 @@ export default class DeliveryAndPayment extends React.Component {
             <h3>Fakturační adresa</h3>
             <div className="form-horizontal">
               <BoundInput type="text" id="jmenoprijmeni" label="Celé jméno" required />
-              <div className="form-group">
-                <label htmlFor="faadresa" className="col-sm-3 control-label">Adresa</label>
-                <div className="col-sm-9">
-                  <input type="text" className="form-control" id="faadresa" name="faadresa" placeholder="Ulice, město, PSČ" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="telefon" className="col-sm-3 control-label">Váš telefon</label>
-                <div className="col-sm-9">
-                  <input type="text" className="form-control" id="telefon" name="telefon" required />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="vasemail" className="col-sm-3 control-label">Váš e-mail</label>
-                <div className="col-sm-9">
-                  <input type="email" className="form-control" id="vasemail" name="vasemail" required />
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" value="yes" name="odbernl" /> Chci dostávat max. 1x měsíčně Krabičkový newsletter.
-                    </label>
-                  </div>
-                </div>
-              </div>
+              <BoundInput type="text" id="faadresa" label="Adresa" placeholder="Ulice, město, PSČ" />
+              <BoundInput type="text" id="telefon" label="Váš telefon" required />
+              <BoundInput type="text" id="vasemail" label="Váš e-mail" required />
+              <BoundInput type="checkbox" id="odbernl" checkboxValue="yes" label="Chci dostávat max. 1x měsíčně Krabičkový newsletter." />
             </div>
           </div>
 
           <div className="col-lg-6">
             <h3>Doručovací adresa (vyplňte, pokud se liší)</h3>
             <div className="form-horizontal">
-              <div className="form-group">
-                <label htmlFor="jmenoprijmeni" className="col-sm-3 control-label">Celé jméno</label>
-                <div className="col-sm-9">
-                  <input type="text" className="form-control" id="jmenoprijmeni" name="jmenoprijmeni" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="faadresa" className="col-sm-3 control-label">Fakturační adresa</label>
-                <div className="col-sm-9">
-                  <input type="text" className="form-control" id="faadresa" name="faadresa" placeholder="Ulice, město, PSČ" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="telefon" className="col-sm-3 control-label">Váš telefon</label>
-                <div className="col-sm-9">
-                  <input type="text" className="form-control" id="telefon" name="telefon" />
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" value="yes" name="stejnaadresa" /> Adresa je stejná jako fakturační
-                    </label>
-                  </div>
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" value="yes" name="stejnaadresa" /> Schválit obsah krabičky (doba dodání se může prodloužit)
-                    </label>
-                  </div>
-                  <div className="checkbox">
-                    <label>
-                      <input type="checkbox" value="yes" name="stejnaadresa" /> Chci zůstat inkognito
-                    </label>
-                  </div>
-                </div>
-              </div>
+              <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" required />
+              <BoundInput type="text" id="adresa_doruceni" label="Adresa" placeholder="Ulice, město, PSČ" />
+              <BoundInput type="text" id="telefon_doruceni" label="Váš telefon" required />
+
             </div>
           </div>
         </div>
