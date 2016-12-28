@@ -291,8 +291,8 @@ footer .footer-below {
 }
 .btn-primary {
   color: white;
-  background-color: #2C3E50;
-  border-color: #2C3E50;
+  background-color: #A63251;
+  border-color: #A63251;
   font-weight: 700;
 }
 .btn-primary:hover,
@@ -301,8 +301,8 @@ footer .footer-below {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #1a242f;
-  border-color: #161f29;
+  background-color: #A63251;
+  border-color: #A63251;
 }
 .btn-primary:active,
 .btn-primary.active,
