@@ -5,8 +5,8 @@ class OrderStore {
   constructor() {
     let initialData = {
       step: 0,
-      paymentType: 'ucet',
       price: 700,
+      paymentType: null,
       deliveryPrice: null,
       zajmy: null,
       povaha: null,
@@ -22,6 +22,7 @@ class OrderStore {
       adresa_doruceni: null,
       telefon_doruceni: null,
       jmeno_pro_koho: null,
+      vek: null,
     }
 
     try {
