@@ -22,7 +22,7 @@ export default class DeliveryAndPayment extends React.Component {
       <form ref="form">
         <div className="row">
           <div className="col-lg-4">
-            <h3>Způsob platby</h3>
+            <h4>ZPŮSOB PLATBY</h4>
             <div className="checkbox">
               <label>
                 <input type="radio" value="ucet" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'ucet'} required /> Předem na bankovní účet <strong>1-2 dny</strong>
@@ -40,7 +40,7 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
           </div>
           <div className="col-lg-4">
-            <h3>Doručení</h3>
+            <h4>DORUČENÍ</h4>
             <div className="checkbox">
               <label>
                 <input type="radio" value="osobne" name="doprava" onChange={() => setValue('deliveryPrice', 0)} defaultChecked={deliveryPrice === 0} required /> Osobní převzetí v Praze <strong>zdarma</strong>
@@ -48,19 +48,20 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="posta" name="doprava" onChange={() => setValue('deliveryPrice', 99)} defaultChecked={deliveryPrice === 99} required /> Přepravní službou Geis <strong>99 Kč</strong>
+                <input type="radio" value="posta" name="doprava" onChange={() => setValue('deliveryPrice', 99)} defaultChecked={deliveryPrice === 99} required /> Přepravní službou Geis (ČR) <strong>99 Kč</strong>
               </label>
             </div>
           </div>
           <div className="col-lg-4">
-            <h3>Další možnosti</h3>
+            <h4>MOŽNOSTI OBJEDNÁVKY</h4>
             <BoundInput type="checkbox" id="inkognito" checkboxValue="yes" label="Chci zůstat inkognito" indentLeft={false} />
             <BoundInput type="checkbox" id="schvalit_obsah" checkboxValue="yes" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
           </div>
         </div>
+        <p>&nbsp;</p>
         <div className="row">
           <div className="col-lg-6">
-            <h3>Fakturační adresa</h3>
+            <h4>FAKTURAČNÍ ADRESA</h4>
             <div className="form-horizontal">
               <BoundInput type="text" id="jmenoprijmeni" label="Celé jméno" required />
               <BoundInput type="text" id="faadresa" label="Adresa" placeholder="Ulice, město, PSČ" />
@@ -71,7 +72,7 @@ export default class DeliveryAndPayment extends React.Component {
           </div>
 
           <div className="col-lg-6">
-            <h3>Doručovací adresa (pokud se liší)</h3>
+            <h4>DORUČOVACÍ ADRESA</h4>
             <div className="form-horizontal">
               <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" />
               <BoundInput type="text" id="adresa_doruceni" label="Adresa" placeholder="Ulice, město, PSČ" />
