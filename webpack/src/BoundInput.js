@@ -1,9 +1,16 @@
-import { observer } from 'mobx-react'
 import React from 'react'
 import classNames from 'classnames'
 import orderStore from './OrderStore'
 
 export default class BoundInput extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isValid: false
+    }
+  }
 
   static defaultProps = {
     indentLeft: true
@@ -12,20 +19,27 @@ export default class BoundInput extends React.Component {
   handleChange = (event) => {
     const { name, value } = event.target
     orderStore.setValue(name, value)
+    this.validate()
   }
 
-  isValid = () => {
+  validate = () => {
     const { input } = this.refs
-    if (!input) return true
 
-    return input.checkValidity()
+
+    this.setState({
+      isValid: input && input.checkValidity()
+    })
+  }
+
+  componentDidMount() {
+    this.validate()
   }
 
   render() {
     const { id, label, required, placeholder, type, checkboxValue, indentLeft } = this.props
     const value = orderStore.order[id]
 
-    const containerClass = classNames('form-group', { 'has-error': !this.isValid() })
+    const containerClass = classNames('form-group', { 'has-error': !this.state.isValid })
     const colDefinitions = classNames({ 'col-sm-9 col-sm-offset-3': indentLeft })
 
     if (type === 'checkbox' || type === 'radio') {
