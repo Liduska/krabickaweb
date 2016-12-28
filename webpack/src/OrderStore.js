@@ -10,7 +10,18 @@ class OrderStore {
       deliveryPrice: null,
       zajmy: null,
       povaha: null,
-      zivotnistyl: null
+      zivotnistyl: null,
+      inkognito: null,
+      schvalit_obsah: null,
+      jmenoprijmeni: null,
+      faadresa: null,
+      telefon: null,
+      vasemail: null,
+      odbernl: null,
+      jmenoprijmeni_doruceni: null,
+      adresa_doruceni: null,
+      telefon_doruceni: null,
+      jmeno_pro_koho: null,
     }
 
     try {
