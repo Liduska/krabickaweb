@@ -66,12 +66,12 @@ export default class DeliveryAndPayment extends React.Component {
               <BoundInput type="text" id="faadresa" label="Adresa" placeholder="Ulice, město, PSČ" />
               <BoundInput type="text" id="telefon" label="Váš telefon" required />
               <BoundInput type="text" id="vasemail" label="Váš e-mail" required />
-              <BoundInput type="checkbox" id="odbernl" checkboxValue="yes" label="Chci dostávat max. 1x měsíčně Krabičkový newsletter." />
+              <BoundInput type="checkbox" id="odbernl" checkboxValue="yes" label="Pošlete mi sem tam krabičkový newsletter" />
             </div>
           </div>
 
           <div className="col-lg-6">
-            <h3>Doručovací adresa (vyplňte, pokud se liší)</h3>
+            <h3>Doručovací adresa (pokud se liší)</h3>
             <div className="form-horizontal">
               <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" />
               <BoundInput type="text" id="adresa_doruceni" label="Adresa" placeholder="Ulice, město, PSČ" />

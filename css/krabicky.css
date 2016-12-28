@@ -98,12 +98,7 @@ dt {
 @media (min-width: 768px) {
   .dl-horizontal dt {
     text-align: left;
-    padding-left: 2rem;
   }
-}
-
-.total-price {
-  font-size: 2rem;
 }
 
 #fb-message {
