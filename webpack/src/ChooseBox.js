@@ -22,8 +22,8 @@ export default class ChooseBox extends React.Component {
             {PRICES.map((p) =>
             <div key={p.price} className="box">
               <div className="radio">
-              <h4> {p.name} </h4>
-              <p> {p.description} </p>
+              <h4>{p.name}</h4>
+              <p className="box-description">{p.description}</p>
               <label>
                 <input type="radio" value={p.price} name="price" onChange={this.handlePriceChange} checked={price === p.price} /><strong>{p.price} Kč</strong>
               </label>

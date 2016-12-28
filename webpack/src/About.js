@@ -12,7 +12,8 @@ export default class About extends React.Component {
   render() {
     return (
       <form ref="form">
-        <h3>Údaje o obdarovaném</h3>
+        <h4>PRO KOHO TO BUDE</h4>
+        <p>&nbsp;</p>
         <div className="row">
           <div className="col-lg-8">
             <div className="form-horizontal">
