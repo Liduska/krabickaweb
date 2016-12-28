@@ -1,15 +1,16 @@
+import { observer } from 'mobx-react'
 import React from 'react'
 
-export default class Summary extends React.Component {
+export default observer(class Summary extends React.Component {
 
   render() {
-    const { totalPrice, price, deliveryPrice, paymentType, krestnijmeno } = this.props
+    const { totalPrice, price, deliveryPrice, paymentType, jmenoprijmeni } = this.props
 
     return (
       <div>
         <div className="row">
           <div className="col-lg-6">
-            Jmeno: {krestnijmeno}
+            Jmeno: {jmenoprijmeni}
           </div>
         </div>
         <div className="row">
@@ -28,4 +29,4 @@ export default class Summary extends React.Component {
       </div>
     );
   }
-}
+})

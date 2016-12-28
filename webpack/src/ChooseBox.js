@@ -28,8 +28,8 @@ export default class ChooseBox extends React.Component {
         <p>&nbsp;</p>
         <div className="box-list">
             {PRICES.map((p) =>
-            <div className="box">
-              <div key={p.price} className="radio">
+            <div key={p.price} className="box">
+              <div className="radio">
               <h4> {p.name} </h4>
               <p> {p.description} </p>
               <label>

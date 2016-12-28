@@ -1,30 +1,16 @@
-import { computed, intercept, observe, observable, extendObservable } from 'mobx'
-import { observer } from 'mobx-react'
 import React from 'react'
 import classNames from 'classnames'
 import BoundInput from './BoundInput'
 
 export default class About extends React.Component {
-  constructor(props) {
-    super(props)
-
-  }
-
-  handleChange = (event) => {
-    const { name, value } = event.target
-
-    this.props.setValue(name, value)
-  }
 
   isValidated = () => {
     return this.refs.form.checkValidity()
   }
 
   render() {
-    const { price } = this.props
-
     return (
-      <form ref="form" onChange={this.handleChange}>
+      <form ref="form">
         <h3>Údaje o obdarovaném</h3>
         <div className="row">
          <div className="col-lg-6">
