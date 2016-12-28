@@ -11,11 +11,15 @@ export default class DeliveryAndPayment extends React.Component {
     this.props.setValue('paymentType', value)
   }
 
+  isValidated = () => {
+    return this.refs.form.checkValidity()
+  }
+
   render() {
     const { totalPrice, price, deliveryPrice, paymentType, setValue } = this.props
 
     return (
-      <div>
+      <form ref="form">
         <div className="row">
           <div className="col-lg-4">
             <h3>Způsob platby</h3>
@@ -76,7 +80,7 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }

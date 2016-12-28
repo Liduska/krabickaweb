@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react'
 import React from 'react'
 import classNames from 'classnames'
 import orderStore from './OrderStore'
@@ -8,11 +9,23 @@ export default class BoundInput extends React.Component {
     indentLeft: true
   }
 
+  handleChange = (event) => {
+    const { name, value } = event.target
+    orderStore.setValue(name, value)
+  }
+
+  isValid = () => {
+    const { input } = this.refs
+    if (!input) return true
+
+    return input.checkValidity()
+  }
+
   render() {
     const { id, label, required, placeholder, type, checkboxValue, indentLeft } = this.props
-    const value = orderStore[id]
+    const value = orderStore.order[id]
 
-    const containerClass = classNames('form-group', { 'has-error': false})
+    const containerClass = classNames('form-group', { 'has-error': !this.isValid() })
     const colDefinitions = classNames({ 'col-sm-9 col-sm-offset-3': indentLeft })
 
     if (type === 'checkbox' || type === 'radio') {
@@ -21,7 +34,7 @@ export default class BoundInput extends React.Component {
           <div className={colDefinitions}>
             <div className="checkbox">
               <label>
-                <input type={type} value={checkboxValue} name={id} defaultChecked={checkboxValue === value} /> {label}
+                <input type={type} ref="input" value={checkboxValue} onChange={this.handleChange} name={id} checked={checkboxValue === value} /> {label}
               </label>
             </div>
           </div>
@@ -33,7 +46,7 @@ export default class BoundInput extends React.Component {
       <div className={containerClass}>
         <label htmlFor={id} className="col-sm-3 control-label">{label}</label>
         <div className="col-sm-9">
-          <input type={type} className="form-control" id={id} name={id} placeholder={placeholder} required={required} defaultValue={value} />
+          <input type={type} ref="input" className="form-control" id={id} name={id} placeholder={placeholder} required={required} value={value} onChange={this.handleChange} />
         </div>
       </div>
     )

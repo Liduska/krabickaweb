@@ -8,8 +8,8 @@ export default class StepZilla extends Component {
       showPreviousBtn: false,
       showNextBtn: true,
       compState: this.props.startAtStep,
-      navState: this._getNavStates(0, this.props.steps.length),
-      nextStepText: 'Next'
+      navState: this._getNavStates(this.props.startAtStep, this.props.steps.length),
+      nextStepText: 'Další'
     };
 
     this.hidden = {
@@ -20,6 +20,10 @@ export default class StepZilla extends Component {
     this.handleKeyDown = this._handleKeyDown.bind(this);
     this.next = this._next.bind(this);
     this.previous = this._previous.bind(this);
+  }
+
+  componentDidMount() {
+    this._checkNavState(this.state.compState);
   }
 
   _getNavStates(indx, length) {
@@ -42,7 +46,7 @@ export default class StepZilla extends Component {
 
   _checkNavState(currentStep){
     if (currentStep > 0 && currentStep !== this.props.steps.length - 1) {
-      let correctNextText = 'Next';
+      let correctNextText = 'Další';
 
       if (currentStep == this.props.steps.length - 2) {
         // we are in the one before final step
@@ -71,7 +75,7 @@ export default class StepZilla extends Component {
 
   _setNavState(next) {
     this.setState({navState: this._getNavStates(next, this.props.steps.length)});
-
+    this.props.onStepChange(next);
     if (next < this.props.steps.length) {
       this.setState({compState: next});
     }
@@ -194,5 +198,6 @@ StepZilla.defaultProps = {
   dontValidate: false,
   preventEnterSubmission: false,
   startAtStep: 0,
-  nextTextOnFinalActionStep: "Next"
+  onStepChange: () => {},
+  nextTextOnFinalActionStep: "Další"
 };

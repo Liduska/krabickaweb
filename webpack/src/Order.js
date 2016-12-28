@@ -8,8 +8,12 @@ import Summary from './Summary'
 
 export default observer(class Order extends React.Component {
 
+  onStepChange = (step) => {
+    this.props.store.setValue('step', step)
+  }
+
   render() {
-    const { totalPrice, price, deliveryPrice, paymentType, setValue } = this.props.store
+    const { order : { step, totalPrice, price, deliveryPrice, paymentType }, setValue } = this.props.store
 
     const steps =
     [
@@ -20,13 +24,13 @@ export default observer(class Order extends React.Component {
                           deliveryPrice={deliveryPrice}
                           paymentType={paymentType}
                           setValue={setValue} />},
-      {name: 'Step 4', component: <Summary {...this.props.store} />}
+      {name: 'Step 4', component: <Summary {...this.props.store.order} />}
     ]
 
     return (
       <div>
         <div className='step-progress'>
-          <StepZilla steps={steps} stepsNavigation={false} />
+          <StepZilla steps={steps} stepsNavigation={false} startAtStep={step} onStepChange={this.onStepChange} />
         </div>
       </div>
     );
