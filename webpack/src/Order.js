@@ -17,14 +17,14 @@ export default observer(class Order extends React.Component {
 
     const steps =
     [
-      {name: 'Step 1', component: <ChooseBox price={price} setValue={setValue} />},
-      {name: 'Step 2', component: <About setValue={setValue} />},
-      {name: 'Step 3', component: <DeliveryAndPayment totalPrice={totalPrice}
+      {name: 'Výběr krabičky', component: <ChooseBox price={price} setValue={setValue} />},
+      {name: 'Bližší informace', component: <About setValue={setValue} />},
+      {name: 'Platba a doručení', component: <DeliveryAndPayment totalPrice={totalPrice}
                           price={price}
                           deliveryPrice={deliveryPrice}
                           paymentType={paymentType}
                           setValue={setValue} />},
-      {name: 'Step 4', component: <Summary {...this.props.store.order} />}
+      {name: 'Shrnutí objednávky', component: <Summary {...this.props.store.order} />}
     ]
 
     return (

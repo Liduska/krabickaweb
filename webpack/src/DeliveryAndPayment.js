@@ -73,9 +73,9 @@ export default class DeliveryAndPayment extends React.Component {
           <div className="col-lg-6">
             <h3>Doručovací adresa (vyplňte, pokud se liší)</h3>
             <div className="form-horizontal">
-              <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" required />
+              <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" />
               <BoundInput type="text" id="adresa_doruceni" label="Adresa" placeholder="Ulice, město, PSČ" />
-              <BoundInput type="text" id="telefon_doruceni" label="Váš telefon" required />
+              <BoundInput type="text" id="telefon_doruceni" label="Váš telefon" />
 
             </div>
           </div>
