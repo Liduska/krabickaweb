@@ -54,8 +54,8 @@ export default class DeliveryAndPayment extends React.Component {
           </div>
           <div className="col-lg-4">
             <h4>MOŽNOSTI OBJEDNÁVKY</h4>
-            <BoundInput type="checkbox" id="inkognito" checkboxValue="yes" label="Chci zůstat inkognito" indentLeft={false} />
-            <BoundInput type="checkbox" id="schvalit_obsah" checkboxValue="yes" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
+            <BoundInput type="checkbox" id="inkognito" label="Chci zůstat inkognito" indentLeft={false} />
+            <BoundInput type="checkbox" id="schvalit_obsah" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
           </div>
         </div>
         <p>&nbsp;</p>
@@ -67,7 +67,7 @@ export default class DeliveryAndPayment extends React.Component {
               <BoundInput type="text" id="faadresa" label="Adresa" placeholder="Ulice, město, PSČ" />
               <BoundInput type="text" id="telefon" label="Váš telefon" required />
               <BoundInput type="text" id="vasemail" label="Váš e-mail" required />
-              <BoundInput type="checkbox" id="odbernl" checkboxValue="yes" label="Pošlete mi sem tam krabičkový newsletter" />
+              <BoundInput type="checkbox" id="odbernl" label="Pošlete mi sem tam krabičkový newsletter" />
             </div>
           </div>
 

@@ -24,7 +24,7 @@ export default observer(class Order extends React.Component {
                           deliveryPrice={deliveryPrice}
                           paymentType={paymentType}
                           setValue={setValue} />},
-      {name: 'Shrnutí objednávky', component: <Summary {...this.props.store.order} />}
+      {name: 'Shrnutí objednávky', component: <Summary {...this.props.store.order} totalPrice={totalPrice} />}
     ]
 
     return (

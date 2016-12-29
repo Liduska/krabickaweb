@@ -17,14 +17,18 @@ export default class BoundInput extends React.Component {
   }
 
   handleChange = (event) => {
-    const { name, value } = event.target
+    let { name, value } = event.target
+    const { type } = this.props
+
+    if (type === 'checkbox') {
+      value = event.target.checked
+    }
     orderStore.setValue(name, value)
     this.validate()
   }
 
   validate = () => {
     const { input } = this.refs
-
 
     this.setState({
       isValid: input && input.checkValidity()
@@ -36,19 +40,19 @@ export default class BoundInput extends React.Component {
   }
 
   render() {
-    const { id, label, required, placeholder, type, checkboxValue, indentLeft } = this.props
+    const { id, label, required, placeholder, type, indentLeft } = this.props
     const value = orderStore.order[id]
 
     const containerClass = classNames('form-group', { 'has-error': !this.state.isValid })
     const colDefinitions = classNames({ 'col-sm-9 col-sm-offset-3': indentLeft })
 
-    if (type === 'checkbox' || type === 'radio') {
+    if (type === 'checkbox') {
       return (
         <div className="form-group">
           <div className={colDefinitions}>
             <div className="checkbox">
               <label>
-                <input type={type} ref="input" value={checkboxValue} onChange={this.handleChange} name={id} checked={checkboxValue === value} /> {label}
+                <input type={type} ref="input" onChange={this.handleChange} name={id} checked={value} /> {label}
               </label>
             </div>
           </div>

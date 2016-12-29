@@ -1,4 +1,4 @@
-import { autorun, observable, action, toJS } from 'mobx'
+import { autorun, observable, extendObservable, action, toJS } from 'mobx'
 
 class OrderStore {
 
@@ -37,10 +37,12 @@ class OrderStore {
     }
 
     this.order = observable({
-      ...initialData,
-      get totalPrice() {
-        const { price, deliveryPrice } = this.order || {}
+        ...initialData
+    })
 
+    extendObservable(this.order, {
+      get totalPrice() {
+        const { price, deliveryPrice } = this
         return price + deliveryPrice
       }
     })
