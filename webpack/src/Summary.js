@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react'
 import React from 'react'
+import { PRICES } from './constants'
 
 export default observer(class Summary extends React.Component {
 
@@ -24,7 +25,7 @@ export default observer(class Summary extends React.Component {
   }
 
   checkboxText = (value) => {
-    return value === 'yes' ? 'Ano' : 'Ne'
+    return value ? 'Ano' : 'Ne'
   }
 
   render() {
@@ -40,7 +41,7 @@ export default observer(class Summary extends React.Component {
       </div>
         <div className="row">
           <div className="col-lg-6">
-            <strong>Typ krabičky:</strong> <br />
+            <strong>Typ krabičky:</strong> {PRICES.find((p) => p.price === price).name} - {price} Kč<br />
             <strong>Krabičku objednává:</strong> {jmenoprijmeni} <br />
             <strong>Pro:</strong> {jmeno_pro_koho} <br />
             <strong>Fakturační adresa:</strong> {jmenoprijmeni}{faadresa ? `, ${faadresa}` : ''} <br />
