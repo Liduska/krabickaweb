@@ -41,18 +41,22 @@ export default observer(class Summary extends React.Component {
       </div>
         <div className="row">
           <div className="col-lg-6">
-            <strong>Typ krabičky:</strong> {PRICES.find((p) => p.price === price).name} - {price} Kč<br />
-            <strong>Krabičku objednává:</strong> {jmenoprijmeni} <br />
-            <strong>Pro:</strong> {jmeno_pro_koho} <br />
-            <strong>Fakturační adresa:</strong> {jmenoprijmeni}{faadresa ? `, ${faadresa}` : ''} <br />
-            <strong>Doručovací adresa:</strong> {jmenoprijmeni_doruceni}{adresa_doruceni ? `, ${adresa_doruceni}` : ''} <br />
+            <p>
+              <strong>Typ krabičky:</strong> {PRICES.find((p) => p.price === price).name} - {price} Kč<br />
+              <strong>Krabičku objednává:</strong> {jmenoprijmeni} <br />
+              <strong>Pro:</strong> {jmeno_pro_koho} <br />
+              <strong>Fakturační adresa:</strong> {jmenoprijmeni}{faadresa ? `, ${faadresa}` : ''} <br />
+              <strong>Doručovací adresa:</strong> {jmenoprijmeni_doruceni}{adresa_doruceni ? `, ${adresa_doruceni}` : ''} <br />
+            </p>
           </div>
           <div className="col-lg-6">
-            <strong>Způsob platby:</strong> {this.paymentType()} <br />
-            <strong>Způsob doručení:</strong> {this.deliveryType()} <br />
-            <strong>Krabičkový newsletter:</strong> {this.checkboxText(odbernl)} <br />
-            <strong>Zůstat inkognito:</strong> {this.checkboxText(inkognito)} <br />
-            <strong>Schválit předem obsah krabičky:</strong> {this.checkboxText(schvalit_obsah)} <br />
+            <p>
+              <strong>Způsob platby:</strong> {this.paymentType()} <br />
+              <strong>Způsob doručení:</strong> {this.deliveryType()} <br />
+              <strong>Krabičkový newsletter:</strong> {this.checkboxText(odbernl)} <br />
+              <strong>Zůstat inkognito:</strong> {this.checkboxText(inkognito)} <br />
+              <strong>Schválit předem obsah krabičky:</strong> {this.checkboxText(schvalit_obsah)} <br />
+            </p>
           </div>
         </div>
 
@@ -61,9 +65,11 @@ export default observer(class Summary extends React.Component {
         <div className="row">
           <div className="col-lg-4">
             <h4>CENY PŘEHLEDNĚ</h4>
+            <p>
               <strong>Cena krabičky</strong> {price}Kč <br />
               <strong>Cena dopravy</strong> {!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'} <br />
               <strong className="total-price">Celková cena</strong> <span className="total-price">{totalPrice ? `${totalPrice} Kč` : '?'}</span>
+            </p>
           </div>
         </div>
       </div>

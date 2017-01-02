@@ -36,7 +36,7 @@ export default class BoundSelect extends React.Component {
     const { id, label, required, options } = this.props
     const value = orderStore.order[id]
 
-    const containerClass = classNames('form-group', { 'has-error': !this.state.isValid })
+    const containerClass = classNames('form-group form-group-sm', { 'has-error': !this.state.isValid })
 
     return (
       <div className={containerClass}>

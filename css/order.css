@@ -2,6 +2,12 @@
   font-size: 0.98em;
 }
 
+@media (min-width: 768px) {
+  .form-horizontal .form-group-sm .control-label, .form-horizontal .form-group-sm .form-control, .checkbox label{
+    font-size: 13.72px;
+  }
+}
+
 .progtrckr-wrapper {
   display: flex;
   justify-content: center;
@@ -47,12 +53,12 @@ ol.progtrckr li.progtrckr-todo {
 
 ol.progtrckr li.progtrckr-doing {
   color: black;
-  border-bottom: 4px solid #CCCCCC;
+  border-bottom: 4px solid #A63251;
 }
 
 ol.progtrckr li.progtrckr-done {
   color: black;
-  border-bottom: 4px solid #CCCCCC;
+  border-bottom: 4px solid #A63251;
 }
 
 ol.progtrckr li:after {
@@ -74,32 +80,28 @@ ol.progtrckr li.progtrckr-todo:before {
   line-height: 1.4em;
 }
 
-ol.progtrckr li.progtrckr-todo:hover:before {
-  color: #0FA0CE;
-}
-
 ol.progtrckr li.progtrckr-doing:before {
   content: "\2022";
   color: white;
-  background-color: #CCCCCC;
+  background-color: #A63251;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
-}
-
-ol.progtrckr li.progtrckr-doing:hover:before {
-  color: #0FA0CE;
 }
 
 ol.progtrckr li.progtrckr-done:before {
   content: "\2713";
   color: white;
-  background-color: #CCCCCC;
+  background-color: #A63251;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
 }
 
-ol.progtrckr li.progtrckr-done:hover:before {
-  color: #0FA0CE;
+.footer-buttons {
+  margin-top: 2rem;
+}
+
+.step-progress {
+  margin-top: 2rem;
 }
