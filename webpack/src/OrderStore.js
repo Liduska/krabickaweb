@@ -6,8 +6,8 @@ class OrderStore {
     let initialData = {
       step: 0,
       price: 700,
-      paymentType: null,
-      deliveryPrice: null,
+      paymentType: 'paypal',
+      deliveryPrice: 99,
       zajmy: null,
       povaha: null,
       zivotnistyl: null,
