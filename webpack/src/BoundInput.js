@@ -43,12 +43,12 @@ export default class BoundInput extends React.Component {
     const { id, label, required, placeholder, type, indentLeft } = this.props
     const value = orderStore.order[id]
 
-    const containerClass = classNames('form-group', { 'has-error': !this.state.isValid })
+    const containerClass = classNames('form-group form-group-sm', { 'has-error': !this.state.isValid })
     const colDefinitions = classNames({ 'col-sm-9 col-sm-offset-3': indentLeft })
 
     if (type === 'checkbox') {
       return (
-        <div className="form-group">
+        <div className="form-group form-group-sm">
           <div className={colDefinitions}>
             <div className="checkbox">
               <label>

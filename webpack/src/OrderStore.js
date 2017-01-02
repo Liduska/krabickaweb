@@ -23,6 +23,7 @@ class OrderStore {
       telefon_doruceni: null,
       jmeno_pro_koho: null,
       vek: null,
+      vzkaz: null,
     }
 
     try {
