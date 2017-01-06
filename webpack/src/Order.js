@@ -12,6 +12,10 @@ export default observer(class Order extends React.Component {
     this.props.store.setValue('step', step)
   }
 
+  onSubmit = () => {
+    this.props.store.submitOrder()
+  }
+
   render() {
     const { order : { step, totalPrice, price, deliveryPrice, paymentType }, setValue } = this.props.store
 
@@ -30,7 +34,7 @@ export default observer(class Order extends React.Component {
     return (
       <div>
         <div className='step-progress'>
-          <StepZilla steps={steps} stepsNavigation={false} startAtStep={step} onStepChange={this.onStepChange} />
+          <StepZilla steps={steps} stepsNavigation={false} startAtStep={step} onStepChange={this.onStepChange} onSubmit={this.onSubmit} />
         </div>
       </div>
     );
