@@ -60,6 +60,17 @@ export default class BoundInput extends React.Component {
       )
     }
 
+    if (type === 'textarea') {
+      return (
+        <div className={containerClass}>
+          <label htmlFor={id} className="col-sm-3 control-label">{label}</label>
+          <div className="col-sm-9">
+            <textarea ref="input" className="form-control" id={id} name={id} placeholder={placeholder} required={required} value={value} onChange={this.handleChange} />
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className={containerClass}>
         <label htmlFor={id} className="col-sm-3 control-label">{label}</label>
