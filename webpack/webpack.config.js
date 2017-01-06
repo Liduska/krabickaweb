@@ -28,6 +28,11 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/build/'
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+    })
+  ],
   module: {
     loaders: loaders
   }
