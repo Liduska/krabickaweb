@@ -77,7 +77,7 @@ export default class DeliveryAndPayment extends React.Component {
               <BoundInput type="text" id="jmenoprijmeni_doruceni" label="Celé jméno" />
               <BoundInput type="text" id="adresa_doruceni" label="Adresa" placeholder="Ulice, město, PSČ" />
               <BoundInput type="text" id="telefon_doruceni" label="Váš telefon" />
-              <BoundInput type="text" id="vzkaz" label="Vzkaz pro adresáta" />
+              <BoundInput type="textarea" id="vzkaz" label="Vzkaz pro adresáta" />
             </div>
           </div>
         </div>
