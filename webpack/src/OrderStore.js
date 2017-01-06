@@ -60,6 +60,26 @@ class OrderStore {
     this.order[field] = value
   })
 
+  submitOrder = action(() => {
+    const order = {
+      ...toJS(this.order),
+      _subject: 'Nová objednávka Krabička na míru!',
+      totalPrice: this.order.totalPrice
+    }
+
+    $.ajax({
+      url: 'https://formspree.io/ahoj@krabickanamiru.cz',
+      method: 'POST',
+      data: order,
+      dataType: 'json'
+    }).done(() => {
+      sessionStorage.removeItem('order')
+      window.location.href = `/jupi.html?paymentType=${order.paymentType}&amount=${order.totalPrice}`
+    }).fail(() => {
+      alert('Při odesílání objednávky došlo k chybě. Zkuste to prosím znovu.')
+    })
+  })
+
 }
 
 const orderStore = new OrderStore()

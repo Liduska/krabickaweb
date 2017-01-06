@@ -68,7 +68,8 @@ export default class StepZilla extends Component {
     else {
       this.setState({
         showPreviousBtn: (this.props.prevBtnOnLastStep) ? true : false,
-        showNextBtn: false
+        showNextBtn: true,
+        nextStepText: 'Odeslat'
       });
     }
   }
@@ -120,6 +121,13 @@ export default class StepZilla extends Component {
   }
 
   _next() {
+    if (this.state.compState === this.props.steps.length - 1) {
+      this.setState({
+        disableNextBtn: true
+      })
+      this.props.onSubmit()
+      return
+    }
     // if its a form component, it should have implemeted a public isValidated class. If not then continue
     if (this.props.dontValidate || typeof this.refs.activeComponent.isValidated == 'undefined' || this.refs.activeComponent.isValidated()) {
       this._setNavState(this.state.compState + 1);
@@ -182,6 +190,7 @@ export default class StepZilla extends Component {
                   onClick={this.previous}>Zpět</button>
 
           <button style={this.state.showNextBtn ? {} : this.hidden}
+                  disabled={this.state.disableNextBtn}
                   className="btn btn-primary btn-lg pull-right"
                   onClick={this.next}>{this.state.nextStepText}</button>
         </div>
