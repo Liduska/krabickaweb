@@ -53,12 +53,12 @@ ol.progtrckr li.progtrckr-todo {
 
 ol.progtrckr li.progtrckr-doing {
   color: black;
-  border-bottom: 4px solid #A63251;
+  border-bottom: 4px solid #AC1F23;
 }
 
 ol.progtrckr li.progtrckr-done {
   color: black;
-  border-bottom: 4px solid #A63251;
+  border-bottom: 4px solid #AC1F23;
 }
 
 ol.progtrckr li:after {
@@ -83,7 +83,7 @@ ol.progtrckr li.progtrckr-todo:before {
 ol.progtrckr li.progtrckr-doing:before {
   content: "\2022";
   color: white;
-  background-color: #A63251;
+  background-color: #AC1F23;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
@@ -92,7 +92,7 @@ ol.progtrckr li.progtrckr-doing:before {
 ol.progtrckr li.progtrckr-done:before {
   content: "\2713";
   color: white;
-  background-color: #A63251;
+  background-color: #AC1F23;
   width: 1.2em;
   line-height: 1.2em;
   border-radius: 1.2em;
