@@ -5,4 +5,5 @@ import orderStore from './OrderStore'
 import configure from './sentry'
 
 configure()
+orderStore.userSelectedBox()
 render(<Order store={orderStore} />, document.querySelector('#app'));

@@ -225,9 +225,14 @@
   <script>
   (function($) {
     $('.btn-buy').click(function() {
-      var price = $(this).attr('data-price')
-      var name = encodeURIComponent($(this).closest('.product').find('h4').text())
-      window.location.href = '/?box=' + name + '&price=' + price + '#order'
+      var boxOrder = {
+        price: Number($(this).attr('data-price')),
+        product: $(this).closest('.product').find('h4').text(),
+        productDescription: $(this).closest('.product').find('ul').html()
+      }
+
+      sessionStorage.setItem('boxOrder', JSON.stringify(boxOrder))
+      window.location.href = '/#order'
     })
   })(jQuery)
   </script>

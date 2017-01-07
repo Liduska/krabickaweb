@@ -29,7 +29,24 @@ export default observer(class Summary extends React.Component {
   }
 
   render() {
-    const { totalPrice, price, deliveryPrice, paymentType, jmenoprijmeni, faadresa, telefon, vasemail, odbernl, jmenoprijmeni_doruceni, adresa_doruceni, telefon_doruceni, inkognito, schvalit_obsah, jmeno_pro_koho } = this.props
+    const { totalPrice,
+            price,
+            deliveryPrice,
+            paymentType,
+            product,
+            boxOrder,
+            jmenoprijmeni,
+            faadresa,
+            telefon,
+            vasemail,
+            odbernl,
+            jmenoprijmeni_doruceni,
+            adresa_doruceni,
+            telefon_doruceni,
+            inkognito,
+            schvalit_obsah,
+            jmeno_pro_koho
+    } = this.props
 
     return (
       <div>
@@ -42,11 +59,11 @@ export default observer(class Summary extends React.Component {
         <div className="row">
           <div className="col-lg-6">
             <p>
-              <strong>Typ krabičky:</strong> {PRICES.find((p) => p.price === price).name} - {price} Kč<br />
+              <strong>Typ krabičky:</strong> {boxOrder ? product : PRICES.find((p) => p.price === price).name} - {price} Kč<br />
               <strong>Krabičku objednává:</strong> {jmenoprijmeni} <br />
               <strong>Pro:</strong> {jmeno_pro_koho} <br />
-              <strong>Fakturační adresa:</strong> {jmenoprijmeni}{faadresa ? `, ${faadresa}` : ''} <br />
-              <strong>Doručovací adresa:</strong> {jmenoprijmeni_doruceni}{adresa_doruceni ? `, ${adresa_doruceni}` : ''} <br />
+              <strong>Fakturační adresa:</strong> {faadresa ? `${jmenoprijmeni}, ${faadresa}` : '-'}<br />
+              <strong>Doručovací adresa:</strong> {adresa_doruceni ? `${jmenoprijmeni_doruceni}, ${adresa_doruceni}` : '-'}<br />
             </p>
           </div>
           <div className="col-lg-6">
@@ -55,7 +72,7 @@ export default observer(class Summary extends React.Component {
               <strong>Způsob doručení:</strong> {this.deliveryType()} <br />
               <strong>Krabičkový newsletter:</strong> {this.checkboxText(odbernl)} <br />
               <strong>Zůstat inkognito:</strong> {this.checkboxText(inkognito)} <br />
-              <strong>Schválit předem obsah krabičky:</strong> {this.checkboxText(schvalit_obsah)} <br />
+              {boxOrder ? null : <span><strong>Schválit předem obsah krabičky:</strong> {this.checkboxText(schvalit_obsah)} <br /></span>}
             </p>
           </div>
         </div>

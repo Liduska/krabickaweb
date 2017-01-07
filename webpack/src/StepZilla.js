@@ -26,6 +26,12 @@ export default class StepZilla extends Component {
     this._checkNavState(this.state.compState);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.steps.length !== nextProps.steps.length) { // When number of steps changed we want to update state immediately
+      this.setState({navState: this._getNavStates(this.state.compState, nextProps.steps.length)});
+    }
+  }
+
   _getNavStates(indx, length) {
     let styles = [];
 

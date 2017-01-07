@@ -16,7 +16,7 @@ export default class DeliveryAndPayment extends React.Component {
   }
 
   render() {
-    const { totalPrice, price, deliveryPrice, paymentType, setValue } = this.props
+    const { totalPrice, price, deliveryPrice, paymentType, boxOrder, setValue } = this.props
 
     return (
       <form ref="form">
@@ -55,7 +55,9 @@ export default class DeliveryAndPayment extends React.Component {
           <div className="col-lg-4">
             <h4>MOŽNOSTI OBJEDNÁVKY</h4>
             <BoundInput type="checkbox" id="inkognito" label="Chci zůstat inkognito" indentLeft={false} />
-            <BoundInput type="checkbox" id="schvalit_obsah" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
+            {
+              boxOrder ? null : <BoundInput type="checkbox" id="schvalit_obsah" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
+            }
           </div>
         </div>
         <p>&nbsp;</p>

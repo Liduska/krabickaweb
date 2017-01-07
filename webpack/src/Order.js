@@ -5,6 +5,7 @@ import ChooseBox from './ChooseBox'
 import About from './About'
 import DeliveryAndPayment from './DeliveryAndPayment'
 import Summary from './Summary'
+import SelectedBox from './SelectedBox'
 
 export default observer(class Order extends React.Component {
 
@@ -16,20 +17,48 @@ export default observer(class Order extends React.Component {
     this.props.store.submitOrder()
   }
 
-  render() {
-    const { order : { step, totalPrice, price, deliveryPrice, paymentType }, setValue } = this.props.store
+  steps = (store) => {
+    const { order : { totalPrice, price, deliveryPrice, paymentType, product, productDescription, boxOrder }, setValue, cancelUserSelectedBox } = store
 
-    const steps =
+    const customBoxSteps =
     [
       {name: 'Výběr krabičky', component: <ChooseBox price={price} setValue={setValue} />},
-      {name: 'Bližší informace', component: <About setValue={setValue} />},
+      {name: 'Bližší informace', component: <About setValue={setValue} />}
+    ]
+
+    const boxOrderSteps =
+    [
+      {name: 'Vybraný produkt', component: <SelectedBox product={product} price={price} productDescription={productDescription} cancelUserSelectedBox={cancelUserSelectedBox} />}
+    ]
+
+    const commonSteps =
+    [
+
       {name: 'Platba a doručení', component: <DeliveryAndPayment totalPrice={totalPrice}
                           price={price}
                           deliveryPrice={deliveryPrice}
                           paymentType={paymentType}
+                          boxOrder={boxOrder}
                           setValue={setValue} />},
       {name: 'Shrnutí objednávky', component: <Summary {...this.props.store.order} totalPrice={totalPrice} />}
     ]
+
+    if (boxOrder) {
+      return [
+        ...boxOrderSteps,
+        ...commonSteps
+      ]
+    }
+
+    return [
+      ...customBoxSteps,
+      ...commonSteps
+    ]
+  }
+
+  render() {
+    const { order : { step }, setValue } = this.props.store
+    const steps = this.steps(this.props.store)
 
     return (
       <div>
