@@ -2,7 +2,7 @@
     "use strict";
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('[href="#contact"], [href="#order"]').bind('click', function(event) {
+    $('[href="#contact"], [href="#order"], [href="#page-top"]').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
