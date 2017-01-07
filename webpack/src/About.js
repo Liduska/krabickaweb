@@ -25,7 +25,7 @@ export default class About extends React.Component {
               <BoundInput type="text" id="zivotnistyl" label="Životní styl" placeholder="ekolog, pankáč, hipster..." />
               <BoundInput type="text" id="chute" label="Chutě" placeholder="vinař, pivař, vegetarián..." />
               <BoundInput type="textarea" id="popis_od_zakaznika" label="Řekněte nám víc" />
-              <span className="help-block col-sm-offset-3">Přidejte další dílek puzzle do celkového obrázku toho, pro koho krabičku budeme chystat. Má nějaké zvláštní dovednosti nebo záliby? Je něčím specifický/á? Co na něm/ní máte nejraději?</span>
+              <span className="help-block col-sm-offset-3">Pomoze nám doladit obrázek o Vašich blízkých k dokonalosti! Má nějaké zvláštní dovednosti nebo záliby? Je něčím specifický/á? Co na něm/ní máte nejraději?</span>
             </div>
           </div>
        </div>
