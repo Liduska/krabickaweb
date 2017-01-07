@@ -108,11 +108,11 @@ dt {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 550px) {
   #fb-message {
     display: block;
   }
-  form {
+  #app {
     display: none;
   }
 }
