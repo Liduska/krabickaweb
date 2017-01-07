@@ -75,7 +75,7 @@ export default class StepZilla extends Component {
       this.setState({
         showPreviousBtn: (this.props.prevBtnOnLastStep) ? true : false,
         showNextBtn: true,
-        nextStepText: 'Odeslat'
+        nextStepText: 'Odeslat objednávku'
       });
     }
   }
@@ -192,13 +192,13 @@ export default class StepZilla extends Component {
         <div style={this.props.showNavigation ? {} : this.hidden} className="footer-buttons">
 
           <button style={this.state.showPreviousBtn ? {} : this.hidden}
-                  className="btn btn-primary btn-lg pull-left"
-                  onClick={this.previous}>Zpět</button>
+                  className="btn btn-default btn-lg pull-left"
+                  onClick={this.previous}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Zpět</button>
 
           <button style={this.state.showNextBtn ? {} : this.hidden}
                   disabled={this.state.disableNextBtn}
-                  className="btn btn-primary btn-lg pull-right"
-                  onClick={this.next}>{this.state.nextStepText}</button>
+                  className="btn btn-default btn-lg pull-right"
+                  onClick={this.next}>{this.state.nextStepText} <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
         </div>
       </div>
     );
