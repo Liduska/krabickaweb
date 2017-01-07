@@ -1,10 +1,8 @@
-// Freelancer Theme JavaScript
-
 (function($) {
-    "use strict"; // Start of use strict
+    "use strict";
 
     // jQuery for page scrolling feature - requires jQuery Easing plugin
-    $('.page-scroll a').bind('click', function(event) {
+    $('[href="#contact"], [href="#order"]').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -30,4 +28,4 @@
         }
     })
 
-})(jQuery); // End of use strict
+})(jQuery);
