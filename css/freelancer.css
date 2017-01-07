@@ -186,25 +186,9 @@ footer .footer-below {
   padding: 25px 0;
   background-color: #922C47;
 }
-.btn-outline {
-  color: white;
-  font-size: 20px;
-  border: solid 2px white;
-  background: transparent;
-  transition: all 0.3s ease-in-out;
-  margin-top: 15px;
-}
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active,
-.btn-outline.active {
-  color: #A63251;
-  background: white;
-  border: solid 2px white;
-}
 .btn-primary {
   color: white;
-  background-color: #A63251;
+  background-color: #c94a6c;
   border-color: #A63251;
 }
 .btn-primary:hover,
