@@ -20,6 +20,7 @@ export default class About extends React.Component {
               <BoundInput type="text" id="jmeno_pro_koho" label="Krabička je pro" required />
               <BoundSelect id="vek" label="Věk" options={['', 'méně než 18', '18 - 25', '25 - 30', '30 - 35', '35 - 45', '45 - 55', 'více než 55']} required />
               <BoundSelect id="pohlavi" label="Pohlaví" options={['', 'Muž', 'Žena']} required />
+              <BoundInput type="text" id="prilezitost" label="K jaké příležitosti" placeholder="sv. Valentýn, výročí seznámení, narozeniny..."/>
               <BoundInput type="text" id="zajmy" label="Volný čas" placeholder="vaření, fotbal, cestování..." />
               <BoundInput type="text" id="povaha" label="Povaha" placeholder="romantik, extrovert, bavič... " />
               <BoundInput type="text" id="zivotnistyl" label="Životní styl" placeholder="ekolog, pankáč, hipster..." />

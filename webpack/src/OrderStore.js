@@ -27,6 +27,7 @@ class OrderStore {
       jmeno_pro_koho: null,
       vek: null,
       vzkaz: null,
+      popis_od_zakaznika: null,
     }
 
     try {
