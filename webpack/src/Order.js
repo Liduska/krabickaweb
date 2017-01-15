@@ -23,7 +23,7 @@ export default observer(class Order extends React.Component {
     const customBoxSteps =
     [
       {name: 'Výběr krabičky', component: <ChooseBox price={price} setValue={setValue} />},
-      {name: 'Bližší informace', component: <About setValue={setValue} />}
+      {name: 'Osobnostní dotazník', component: <About setValue={setValue} />}
     ]
 
     const boxOrderSteps =
