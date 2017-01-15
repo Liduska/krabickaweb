@@ -165,12 +165,12 @@ margin: 0 auto;
   text-align: center;
 }
 
-.product ul {
+ul.centered-list {
   display: inline-block;
   margin: auto;
   text-align: left;
 }
 
-.product li {
+ul.centered-list li {
   display: inline=block;
 }

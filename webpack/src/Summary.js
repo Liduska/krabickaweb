@@ -61,7 +61,7 @@ export default observer(class Summary extends React.Component {
         <div className="row">
           <div className="col-lg-6">
             <p>
-              <strong>Typ krabičky:</strong> {boxOrder ? product : PRICES.find((p) => p.price === price).name} - {price} Kč<br />
+              <strong>Typ krabičky:</strong> {boxOrder ? product : PRICES.find((p) => p.price === price).name}<br />
               <strong>Krabičku objednává:</strong> {jmenoprijmeni} <br />
               <strong>Pro:</strong> {jmeno_pro_koho} <br />
               <strong>Fakturační adresa:</strong> {faadresa ? `${jmenoprijmeni}, ${faadresa}` : '-'}<br />
@@ -83,7 +83,7 @@ export default observer(class Summary extends React.Component {
 
         <div className="row">
           <div className="col-lg-4">
-            <h4>CENY PŘEHLEDNĚ</h4>
+            <h4>KOLIK TO BUDE STÁT</h4>
             <p>
               <strong>Cena krabičky</strong> {price}Kč <br />
               <strong>Cena dopravy</strong> {!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'} <br />
