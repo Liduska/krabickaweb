@@ -21,6 +21,8 @@ export default observer(class Summary extends React.Component {
         return 'Osobní odběr'
       case 99:
         return 'Přepravní službou Geis'
+      case 150:
+        return 'Česká pošta - dobírka'
     }
   }
 

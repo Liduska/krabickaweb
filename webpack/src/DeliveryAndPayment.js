@@ -48,9 +48,19 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="posta" name="doprava" onChange={() => setValue('deliveryPrice', 99)} defaultChecked={deliveryPrice === 99} required /> Přepravní službou Geis (ČR) <strong>99 Kč</strong>
+                <input type="radio" value="kuryr" name="doprava" onChange={() => setValue('deliveryPrice', 99)} defaultChecked={deliveryPrice === 99} required /> Přepravní službou Geis (ČR) <strong>99 Kč</strong>
               </label>
             </div>
+            {
+              boxOrder ?
+                <div className="checkbox">
+                  <label>
+                    <input type="radio" value="posta_dobirka" name="doprava" onChange={() => setValue('deliveryPrice', 150)} defaultChecked={deliveryPrice === 150} required /> Česká pošta - dobírka (ČR) <strong>150 Kč</strong>
+                  </label>
+                </div>
+              :
+              null
+            }
           </div>
           <div className="col-lg-4">
             <h4>MOŽNOSTI OBJEDNÁVKY</h4>
