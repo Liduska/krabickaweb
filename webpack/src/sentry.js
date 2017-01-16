@@ -6,17 +6,19 @@ export default function configure() {
     .config('https://f786d46ae057499599aad4700567fc8f@sentry.io/127272')
     .install()
 
-    $(document).ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
-      Raven.captureMessage(thrownError || jqXHR.statusText, {
-          extra: {
-              type: ajaxSettings.type,
-              url: ajaxSettings.url,
-              data: ajaxSettings.data,
-              status: jqXHR.status,
-              error: thrownError || jqXHR.statusText,
-              response: jqXHR.responseText.substring(0, 100)
-          }
-    });
-});
+    if (window.jQuery) {
+      $(document).ajaxError(function(event, jqXHR, ajaxSettings, thrownError) {
+        Raven.captureMessage(thrownError || jqXHR.statusText, {
+            extra: {
+                type: ajaxSettings.type,
+                url: ajaxSettings.url,
+                data: ajaxSettings.data,
+                status: jqXHR.status,
+                error: thrownError || jqXHR.statusText,
+                response: jqXHR.responseText.substring(0, 100)
+            }
+        })
+      })
+    }
   }
 }
