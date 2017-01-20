@@ -39,7 +39,7 @@ export default observer(class Summary extends React.Component {
         break
       case 'bitcoin':
       case 'paypal':
-        days = 1
+        days = 2
         break
     }
     if (this.props.boxOrder) {
