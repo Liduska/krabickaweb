@@ -122,7 +122,7 @@ dt {
   text-align: left;
 }
 
-.q-and-a, .hotove-krabicky {
+.q-and-a, .hotove-krabicky, #order {
 padding-top: 120px;
 padding-bottom: 120px;
 max-width: 960px;

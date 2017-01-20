@@ -30,7 +30,7 @@ export default class DeliveryAndPayment extends React.Component {
             </div>
             <div className="checkbox">
               <label>
-                <input type="radio" value="bitcoin" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'bitcoin'} required /> Chci platit bitcoinem <strong>ihned</strong>
+                <input type="radio" value="bitcoin" name="platba" onChange={this.handlePaymentTypeChange} checked={paymentType === 'bitcoin'} required /> Platba bitcoinem <strong>ihned</strong>
               </label>
             </div>
             <div className="checkbox">
@@ -66,7 +66,7 @@ export default class DeliveryAndPayment extends React.Component {
             <h4>MOŽNOSTI OBJEDNÁVKY</h4>
             <BoundInput type="checkbox" id="inkognito" label="Chci zůstat inkognito" indentLeft={false} />
             {
-              boxOrder ? null : <BoundInput type="checkbox" id="schvalit_obsah" label="Schválit obsah krabičky (doba dodání se může prodloužit)" indentLeft={false} />
+              boxOrder ? null : <BoundInput type="checkbox" id="schvalit_obsah" label="Schválit obsah krabičky před odesláním" indentLeft={false} />
             }
           </div>
         </div>
@@ -79,7 +79,7 @@ export default class DeliveryAndPayment extends React.Component {
               <BoundInput type="text" id="faadresa" label="Adresa" placeholder="Ulice, město, PSČ" />
               <BoundInput type="text" id="telefon" label="Váš telefon" required />
               <BoundInput type="text" id="vasemail" label="Váš e-mail" required />
-              <BoundInput type="checkbox" id="odbernl" label="Pošlete mi sem tam krabičkový newsletter" />
+              <BoundInput type="checkbox" id="odbernl" label="Chci dostávat 1x měsíčně krabičkový newsletter." />
             </div>
           </div>
 

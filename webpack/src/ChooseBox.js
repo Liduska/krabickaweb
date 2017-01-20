@@ -11,13 +11,19 @@ export default class ChooseBox extends React.Component {
     this.props.setValue('price', price)
   }
 
+  componentDidMount() {
+    $('#zakazkove-popis').show()
+  }
+
+  componentWillUnmount() {
+    $('#zakazkove-popis').hide()
+  }
+
   render() {
     const { price } = this.props
 
     return (
       <div>
-        <h4>TYP KRABIČKY</h4>
-        <p>&nbsp;</p>
         <div className="box-list">
             {PRICES.map((p) =>
             <div key={p.price} className="box">
