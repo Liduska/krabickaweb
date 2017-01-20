@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react'
 import React from 'react'
 import { PRICES } from './constants'
+import moment from 'moment'
 
 export default observer(class Summary extends React.Component {
 
@@ -28,6 +29,25 @@ export default observer(class Summary extends React.Component {
 
   checkboxText = (value) => {
     return value ? 'Ano' : 'Ne'
+  }
+
+  deliveryDate = () => {
+    let days
+    switch (this.props.paymentType) {
+      case 'ucet':
+        days = 3
+        break
+      case 'bitcoin':
+      case 'paypal':
+        days = 1
+        break
+    }
+    if (this.props.boxOrder) {
+      return moment().add(days, 'days').format('D. M. YYYY')
+    } else {
+      days += 6
+      return moment().add(days, 'days').format('D. M. YYYY') + ' - ' + moment().add(days + 2, 'days').format('D. M. YYYY')
+    }
   }
 
   render() {
@@ -82,12 +102,22 @@ export default observer(class Summary extends React.Component {
         <p>&nbsp;</p>
 
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-6">
             <h4>KOLIK TO BUDE STÁT</h4>
             <p>
               <strong>Cena krabičky</strong> {price}Kč <br />
               <strong>Cena dopravy</strong> {!isNaN(deliveryPrice) ? `${deliveryPrice} Kč` : 'Vyplňte způsob dopravy'} <br />
               <strong className="total-price">Celková cena</strong> <span className="total-price">{totalPrice ? `${totalPrice} Kč` : '?'}</span>
+            </p>
+          </div>
+
+          <div className="col-lg-6">
+            <h4>KRABIČKA BUDE K {deliveryPrice === 0 ? 'PŘEVZETÍ' : 'ODESLÁNÍ'}</h4>
+            <p>
+              { this.deliveryDate() }
+            </p>
+            <p>
+              Čas je pouze orientační. Počkejte, prosíme, na výzvu k odběru nebo informaci o odeslání krabičky.
             </p>
           </div>
         </div>
