@@ -111,20 +111,6 @@ dt {
   }
 }
 
-#fb-message {
-  text-align: center;
-  display: none;
-}
-
-@media (max-width: 550px) {
-  #fb-message {
-    display: block;
-  }
-  #app {
-    display: none;
-  }
-}
-
 .link-list {
   font-size: 16px;
   text-align: left;
