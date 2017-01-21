@@ -68,6 +68,10 @@ margin-bottom: 80px;
   padding-top: 0;
 }
 
+.flex {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
 
   .flex {
