@@ -28,8 +28,8 @@ margin-bottom: 80px;
 
 .intro-text img {
   width: 70px;
-  position: relative;
-  top: -22px;
+  transform: rotate(5deg);
+  margin-left: 10px;
 }
 
 .how-it-works {

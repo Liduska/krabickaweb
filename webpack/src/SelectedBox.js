@@ -19,9 +19,9 @@ export default observer(class SelectedBox extends React.Component {
             <p>
             <strong>Cena krabičky:</strong> {price} Kč
             </p>
-            <a href="/hotove-krabicky.html" className="btn btn-default">Změnit výběr</a>
+            <a href="/hotove-krabicky.html" className="btn btn-default">Chci změnit výběr krabičky</a>
             &nbsp;
-            <button onClick={this.cancelUserSelectedBox} className="btn btn-default">Chci si vytvořit vlastní krabičku</button>
+            <button onClick={this.cancelUserSelectedBox} className="btn btn-default">Dám přednost krabičce na míru</button>
           </div>
         </div>
       </div>
