@@ -164,6 +164,11 @@ margin: 0 auto;
   text-align: center;
 }
 
+.product img {
+  display: block;
+  margin: 1rem auto 1rem auto;
+}
+
 ul.centered-list {
   display: inline-block;
   margin: auto;
