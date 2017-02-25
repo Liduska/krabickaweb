@@ -14,6 +14,10 @@
   padding-bottom: 2rem;
 }
 
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
 header {
 margin-top: 3rem;
 }
@@ -31,6 +35,10 @@ margin-bottom: 80px;
 
 .how-it-works {
   text-align: center;
+}
+
+.how-it-works img {
+  width: 100%;
 }
 
 .how-we-do-it {
