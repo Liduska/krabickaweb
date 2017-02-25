@@ -5,9 +5,6 @@
       width: 970px;
   }
 }
-img {
-  width: 80%;
-}
 
 .t-14 {
   font-size: 14px;
@@ -15,6 +12,10 @@ img {
 
 .padding-bottom-2 {
   padding-bottom: 2rem;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
 }
 
 header {
@@ -34,6 +35,10 @@ margin-bottom: 80px;
 
 .how-it-works {
   text-align: center;
+}
+
+.how-it-works img {
+  width: 100%;
 }
 
 .how-we-do-it {
@@ -142,6 +147,10 @@ margin: 0 auto;
 
 .hotove-krabicky .col-md-12 {
   margin-bottom: 5rem;
+}
+
+.hotove-krabicky img {
+  width: 100%;
 }
 
 .product {
