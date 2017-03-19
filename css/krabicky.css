@@ -1,0 +1,196 @@
+@import 'fonts.css';
+
+@media (min-width: 1200px) {
+  .container {
+      width: 970px;
+  }
+}
+
+.t-14 {
+  font-size: 14px;
+}
+
+.padding-bottom-2 {
+  padding-bottom: 2rem;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+header {
+margin-top: 3rem;
+}
+
+header .intro-text {
+margin-top: 25px;
+margin-bottom: 80px;
+}
+
+.intro-text img {
+  width: 70px;
+  transform: rotate(5deg);
+  margin-left: 10px;
+}
+
+.how-it-works {
+  text-align: center;
+}
+
+.how-it-works img {
+  width: 100%;
+}
+
+.how-we-do-it {
+  padding: 5rem 0;
+}
+
+.how-we-do-it__bg {
+  background-color: #D12026;
+  color: white;
+}
+
+.how-we-do-it h3 {
+  margin: 2.5rem 0 2.5rem 0;
+}
+
+.half {
+  margin: 0.5rem;
+}
+
+#photos {
+  padding: 0;
+}
+
+#photos img {
+  width: 18rem;
+  margin: 0.5rem;
+  object-fit: cover;
+  height: 120px;
+}
+
+#order {
+  padding-top: 0;
+}
+
+.flex {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .half {
+    margin: 0 2rem;
+  }
+
+  .box-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .box {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+.price {
+  margin: 1rem 0;
+}
+
+dt {
+  font-weight: normal;
+}
+
+.radio-inline label {
+  font-weight: normal;
+}
+
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    text-align: left;
+  }
+}
+
+.link-list {
+  font-size: 16px;
+  text-align: left;
+}
+
+.q-and-a, .hotove-krabicky, #order {
+padding-top: 120px;
+padding-bottom: 120px;
+max-width: 960px;
+margin: 0 auto;
+}
+.q-and-a h1, .q-and-a h3, .q-and-a h4 {
+  margin-top: 3rem;
+}
+
+.q-and-a h1 {
+  font-size: 24px;
+}
+
+.q-and-a h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.hotove-krabicky .col-md-12 {
+  margin-bottom: 5rem;
+}
+
+.hotove-krabicky img {
+  width: 100%;
+}
+
+.product {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.product i {
+  text-align: center;
+  display: block;
+  font-size: 46px;
+  margin-bottom: 3rem;
+}
+
+.product p {
+  text-align: center;
+}
+
+.product h4 {
+  text-align: center;
+}
+
+.product img {
+  display: block;
+  margin: 1rem auto 1rem auto;
+}
+
+ul.centered-list {
+  display: inline-block;
+  margin: auto;
+  text-align: left;
+}
+
+.centered-content {
+  text-align: center;
+}
+
+i.heading-icon {
+  text-align: center;
+  display: block;
+  font-size: 46px;
+  margin-bottom: 3rem;
+}
